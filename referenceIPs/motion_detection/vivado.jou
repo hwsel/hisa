@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:26:55 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Tue Feb 11 23:03:44 2014
+# Process ID: 9341
+# Log file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.log
+# Journal file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.xpr

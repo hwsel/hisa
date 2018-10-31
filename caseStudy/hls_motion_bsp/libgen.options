@@ -1,0 +1,3 @@
+PROCESSOR=ps7_cortexa9_0
+REPOSITORIES=-lp /home/xfeng/workspace/hlstest/hlszynq/hls_macc/hls_macc/sdkswrepo
+HWSPEC=../hw_platform_0/system.xml

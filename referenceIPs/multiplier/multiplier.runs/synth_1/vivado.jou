@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4.1 (64-bit)
+# SW Build 1431336 on Fri Dec 11 14:52:39 MST 2015
+# IP Build 1427053 on Mon Dec  7 12:56:29 MST 2015
+# Start of session at: Fri Mar 31 16:21:44 2017
+# Process ID: 24170
+# Current directory: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

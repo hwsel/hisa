@@ -1,0 +1,378 @@
+14:14:59.544 INFO  - Processing command line option -hwspec /home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw/Zynq_Design.xml. 
+14:15:17.223 INFO  - Saving repository preferences. 
+14:15:17.225 INFO  - Reading in cores from local repositories: 
+		 /home/xfeng/workspace/hlstest/hlszynq/hls_macc/hls_macc/sdkswrepo 
+14:15:17.227 INFO  - Updating libgen.options on all BSP projects. 
+14:15:17.230 INFO  - Cleaning BSP projects in the workspace. 
+14:19:23.013 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+14:19:30.124 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:19:30.224 INFO  - PS initialization will be done as it is not done before. 
+14:19:30.224 INFO  - Running PS initialization.... 
+14:19:30.350 INFO  - ps7_init is completed. 
+14:19:30.450 INFO  - ps7_post_config is completed. 
+14:19:30.550 INFO  - PS Initialization is complete. 
+15:03:56.979 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:04:14.342 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:04:14.344 INFO  - PS initialization will be done as it is not done before. 
+15:04:14.344 INFO  - Running PS initialization.... 
+15:04:14.459 INFO  - ps7_init is completed. 
+15:04:14.559 INFO  - ps7_post_config is completed. 
+15:04:14.659 INFO  - PS Initialization is complete. 
+15:28:06.389 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:28:41.812 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:28:48.384 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:28:48.484 INFO  - PS initialization will be done as it is not done before. 
+15:28:48.485 INFO  - Running PS initialization.... 
+15:28:48.598 INFO  - ps7_init is completed. 
+15:28:48.698 INFO  - ps7_post_config is completed. 
+15:28:48.700 INFO  - PS Initialization is complete. 
+15:29:49.230 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:30:51.217 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:30:52.680 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:31:53.765 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:31:55.265 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:34:53.122 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:34:55.223 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:36:37.468 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:36:39.069 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:39:38.341 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:39:39.841 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:41:28.058 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:42:05.531 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:42:55.174 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:43:58.713 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:44:19.167 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:44:28.773 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:44:28.873 INFO  - PS initialization will be done as it is not done before. 
+15:44:28.873 INFO  - Running PS initialization.... 
+15:44:28.986 INFO  - ps7_init is completed. 
+15:44:29.086 INFO  - ps7_post_config is completed. 
+15:44:29.186 INFO  - PS Initialization is complete. 
+15:54:35.640 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:54:42.450 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:54:42.452 INFO  - PS initialization will be done as it is not done before. 
+15:54:42.453 INFO  - Running PS initialization.... 
+15:54:42.567 INFO  - ps7_init is completed. 
+15:54:42.667 INFO  - ps7_post_config is completed. 
+15:54:42.669 INFO  - PS Initialization is complete. 
+15:56:13.376 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:56:32.953 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:56:38.892 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:56:38.992 INFO  - PS initialization will be done as it is not done before. 
+15:56:38.993 INFO  - Running PS initialization.... 
+15:56:39.105 INFO  - ps7_init is completed. 
+15:56:39.205 INFO  - ps7_post_config is completed. 
+15:56:39.305 INFO  - PS Initialization is complete. 
+16:01:14.281 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:01:43.664 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:02:37.633 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+16:02:43.959 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:02:44.059 INFO  - PS initialization will be done as it is not done before. 
+16:02:44.059 INFO  - Running PS initialization.... 
+16:02:44.177 INFO  - ps7_init is completed. 
+16:02:44.277 INFO  - ps7_post_config is completed. 
+16:02:44.377 INFO  - PS Initialization is complete. 
+16:03:40.466 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:04:34.257 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:04:58.833 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+16:05:05.229 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:05:05.329 INFO  - PS initialization will be done as it is not done before. 
+16:05:05.329 INFO  - Running PS initialization.... 
+16:05:05.443 INFO  - ps7_init is completed. 
+16:05:05.448 INFO  - ps7_post_config is completed. 
+16:05:05.548 INFO  - PS Initialization is complete. 
+16:06:07.737 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:06:09.339 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:09:11.515 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:09:13.616 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:11:45.986 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:11:47.687 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:16:02.773 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:16:04.473 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:16:55.922 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:17:11.146 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:18:32.512 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:18:56.560 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:19:16.886 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:19:51.468 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+16:19:56.776 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:19:56.778 INFO  - PS initialization will be done as it is not done before. 
+16:19:56.778 INFO  - Running PS initialization.... 
+16:19:56.894 INFO  - ps7_init is completed. 
+16:19:56.899 INFO  - ps7_post_config is completed. 
+16:19:56.999 INFO  - PS Initialization is complete. 
+16:22:19.525 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:23:17.384 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+16:23:25.874 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:23:25.974 INFO  - PS initialization will be done as it is not done before. 
+16:23:25.974 INFO  - Running PS initialization.... 
+16:23:26.089 INFO  - ps7_init is completed. 
+16:23:26.189 INFO  - ps7_post_config is completed. 
+16:23:26.289 INFO  - PS Initialization is complete. 
+16:23:58.981 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:25:22.111 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:39:06.956 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:41:40.087 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:44:07.053 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:48:55.849 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:49:34.629 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:52:41.761 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:53:07.056 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:53:51.147 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:21:03.757 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:23:39.365 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:36:56.468 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:59:15.138 WARN  - Unable to obtain port 2350 for use by XMD, java.net.BindException: Address already in use 
+15:01:46.528 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+15:02:05.668 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:02:05.768 INFO  - PS initialization will be done as it is not done before. 
+15:02:05.769 INFO  - Running PS initialization.... 
+15:02:05.895 INFO  - ps7_init is completed. 
+15:02:05.995 INFO  - ps7_post_config is completed. 
+15:02:06.095 INFO  - PS Initialization is complete. 
+15:03:20.587 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:07:39.607 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:12:02.118 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:12:03.528 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:15:46.751 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:15:48.855 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:18:18.000 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:18:20.403 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:20:15.806 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:20:17.507 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:36:36.634 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:36:38.444 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:38:49.225 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:40:03.396 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:40:07.401 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:57:32.249 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:57:34.251 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:59:21.641 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+15:59:23.442 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:00:37.160 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:18:48.354 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+16:18:48.359 WARN  - Terminating existing sessions on processor ps7_cortexa9_0 
+16:19:01.570 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+16:19:08.354 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:19:08.454 INFO  - PS initialization will be done as it is not done before. 
+16:19:08.454 INFO  - Running PS initialization.... 
+16:19:08.569 INFO  - ps7_init is completed. 
+16:19:08.669 INFO  - ps7_post_config is completed. 
+16:19:08.770 INFO  - PS Initialization is complete. 
+16:19:53.011 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:19:54.713 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:20:26.776 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:20:28.177 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:38:11.123 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:38:12.824 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:39:00.546 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:40:13.942 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:54:10.297 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+17:54:34.966 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:54:35.066 INFO  - PS initialization will be done as it is not done before. 
+17:54:35.066 INFO  - Running PS initialization.... 
+17:54:35.180 INFO  - ps7_init is completed. 
+17:54:35.280 INFO  - ps7_post_config is completed. 
+17:54:35.380 INFO  - PS Initialization is complete. 
+17:56:30.382 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:56:31.984 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:58:06.917 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:58:08.619 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:59:08.377 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:59:10.178 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:00:21.681 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:00:25.986 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:03:33.079 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:03:34.780 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:48:11.005 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+18:48:17.891 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:48:17.991 INFO  - PS initialization will be done as it is not done before. 
+18:48:17.991 INFO  - Running PS initialization.... 
+18:48:18.103 INFO  - ps7_init is completed. 
+18:48:18.203 INFO  - ps7_post_config is completed. 
+18:48:18.303 INFO  - PS Initialization is complete. 
+18:48:49.635 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:48:51.937 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:50:07.362 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:50:09.263 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:22:07.358 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+19:23:08.835 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:23:08.935 INFO  - PS initialization will be done as it is not done before. 
+19:23:08.935 INFO  - Running PS initialization.... 
+19:23:09.049 INFO  - ps7_init is completed. 
+19:23:09.149 INFO  - ps7_post_config is completed. 
+19:23:09.249 INFO  - PS Initialization is complete. 
+19:23:28.696 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:23:31.300 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:24:06.655 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:24:08.256 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:26:35.169 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:26:36.570 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:35:17.558 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:35:19.560 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:41:25.953 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:41:27.354 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:43:47.554 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:43:49.555 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:44:49.417 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:44:51.018 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:54:36.354 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:54:38.657 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:15:38.028 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+21:15:53.333 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:15:53.433 INFO  - PS initialization will be done as it is not done before. 
+21:15:53.433 INFO  - Running PS initialization.... 
+21:15:53.546 INFO  - ps7_init is completed. 
+21:15:53.646 INFO  - ps7_post_config is completed. 
+21:15:53.746 INFO  - PS Initialization is complete. 
+21:16:39.530 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+21:16:41.531 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:40:23.784 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:51:23.353 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+23:51:36.154 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:51:36.157 INFO  - PS initialization will be done as it is not done before. 
+23:51:36.157 INFO  - Running PS initialization.... 
+23:51:36.269 INFO  - ps7_init is completed. 
+23:51:36.369 INFO  - ps7_post_config is completed. 
+23:51:36.469 INFO  - PS Initialization is complete. 
+23:52:10.939 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:52:12.546 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:08:36.615 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+00:09:04.766 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:09:04.769 INFO  - PS initialization will be done as it is not done before. 
+00:09:04.769 INFO  - Running PS initialization.... 
+00:09:04.882 INFO  - ps7_init is completed. 
+00:09:04.982 INFO  - ps7_post_config is completed. 
+00:09:05.082 INFO  - PS Initialization is complete. 
+00:09:46.256 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+00:09:48.266 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:56:23.729 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+00:56:41.635 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:56:41.735 INFO  - PS initialization will be done as it is not done before. 
+00:56:41.735 INFO  - Running PS initialization.... 
+00:56:41.850 INFO  - ps7_init is completed. 
+00:56:41.950 INFO  - ps7_post_config is completed. 
+00:56:42.050 INFO  - PS Initialization is complete. 
+00:59:28.542 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+00:59:30.143 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:01:16.298 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:01:17.798 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:03:46.596 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+01:04:01.045 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:04:01.145 INFO  - PS initialization will be done as it is not done before. 
+01:04:01.145 INFO  - Running PS initialization.... 
+01:04:01.256 INFO  - ps7_init is completed. 
+01:04:01.356 INFO  - ps7_post_config is completed. 
+01:04:01.456 INFO  - PS Initialization is complete. 
+01:04:56.946 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:04:58.648 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:05:28.974 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:05:30.475 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:07:00.276 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:07:02.178 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:07:39.194 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:07:40.295 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:08:38.148 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:08:39.551 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:09:43.531 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:09:45.433 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:11:19.257 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:11:20.858 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:12:12.098 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:12:13.599 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:15:51.383 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:15:52.983 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:19:28.496 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:19:30.297 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:23:26.566 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:23:28.367 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:26:40.377 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:26:42.177 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:28:12.995 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:28:14.596 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:28:56.721 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:28:58.322 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:30:42.954 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:30:44.755 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:31:44.811 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:31:46.612 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:32:31.037 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:32:33.439 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:38:02.634 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:38:04.936 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:39:13.490 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:39:15.092 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:43:11.350 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+01:43:13.352 INFO  - Processor reset is completed for ps7_cortexa9_0 
+01:46:06.841 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+01:46:06.845 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:43:00.488 INFO  - Project hw_platform_0's source hardware specification located at /home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw/Zynq_Design.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+10:44:43.464 INFO  - Project hw_platform_0's source hardware specification location will not be monitored anymore. 
+10:45:34.993 WARN  - Unable to obtain port 2350 for use by XMD, java.net.BindException: Address already in use 
+10:45:40.400 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK(beforedmatest)/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+10:46:12.494 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:46:12.594 INFO  - PS initialization will be done as it is not done before. 
+10:46:12.594 INFO  - Running PS initialization.... 
+10:46:12.709 INFO  - ps7_init is completed. 
+10:46:12.809 INFO  - ps7_post_config is completed. 
+10:46:12.909 INFO  - PS Initialization is complete. 
+10:47:06.852 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:47:08.753 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:47:43.220 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:47:44.720 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:51:58.670 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:28:09.261 INFO  - Restoring local repository preferences: 
+		 /home/xfeng/workspace/hlstest/hlszynq/hls_macc/hls_macc/sdkswrepo 
+22:02:09.274 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+22:02:16.141 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:02:16.241 INFO  - PS initialization will be done as it is not done before. 
+22:02:16.241 INFO  - Running PS initialization.... 
+22:02:16.358 INFO  - ps7_init is completed. 
+22:02:16.458 INFO  - ps7_post_config is completed. 
+22:02:16.559 INFO  - PS Initialization is complete. 
+22:03:17.306 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+22:03:19.107 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:04:03.261 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+22:04:04.963 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:27:49.417 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+23:28:13.168 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:28:13.268 INFO  - PS initialization will be done as it is not done before. 
+23:28:13.268 INFO  - Running PS initialization.... 
+23:28:13.386 INFO  - ps7_init is completed. 
+23:28:13.486 INFO  - ps7_post_config is completed. 
+23:28:13.586 INFO  - PS Initialization is complete. 
+23:29:00.254 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:29:01.856 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:32:57.350 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:32:59.251 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:33:39.564 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:34:07.467 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:34:09.067 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:39:42.083 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:39:43.883 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:42:56.043 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:11:48.602 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+00:11:48.607 WARN  - Terminating existing sessions on processor ps7_cortexa9_0 
+00:11:59.866 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+00:12:10.555 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:12:10.655 INFO  - PS initialization will be done as it is not done before. 
+00:12:10.656 INFO  - Running PS initialization.... 
+00:12:10.769 INFO  - ps7_init is completed. 
+00:12:10.869 INFO  - ps7_post_config is completed. 
+00:12:10.969 INFO  - PS Initialization is complete. 
+00:13:22.745 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:14:02.379 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+00:14:04.280 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:42:12.722 INFO  - FPGA configured successfully with bitstream "/home/xfeng/smartcamera/motiondetection/gitwork/NewSmartCameraZC702/zc702_fgbg/zc702_vdmafgbg_5/zc702_vdmafgbg_5.sdk/SDK/SDK_Export/hw_platform_0/Zynq_Design_wrapper.bit" 
+00:42:20.012 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:42:20.112 INFO  - PS initialization will be done as it is not done before. 
+00:42:20.112 INFO  - Running PS initialization.... 
+00:42:20.230 INFO  - ps7_init is completed. 
+00:42:20.235 INFO  - ps7_post_config is completed. 
+00:42:20.335 INFO  - PS Initialization is complete. 
+00:44:21.122 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+00:44:22.623 INFO  - Processor reset is completed for ps7_cortexa9_0 

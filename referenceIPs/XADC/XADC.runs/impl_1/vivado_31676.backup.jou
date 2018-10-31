@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4.1 (64-bit)
+# SW Build 1431336 on Fri Dec 11 14:52:39 MST 2015
+# IP Build 1427053 on Mon Dec  7 12:56:29 MST 2015
+# Start of session at: Fri Mar 31 17:17:58 2017
+# Process ID: 31676
+# Current directory: /home/mye/Research/Github/trustzoneht/Micro17/project/XADC/XADC.runs/impl_1
+# Command line: vivado -log design_1_wrapper.vdi -applog -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: /home/mye/Research/Github/trustzoneht/Micro17/project/XADC/XADC.runs/impl_1/design_1_wrapper.vdi
+# Journal file: /home/mye/Research/Github/trustzoneht/Micro17/project/XADC/XADC.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

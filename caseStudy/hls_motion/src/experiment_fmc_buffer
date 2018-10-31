@@ -1,0 +1,1231 @@
+//----------------------------------------------------------------
+//      _____
+//     /     \
+//    /____   \____
+//   / \===\   \==/
+//  /___\===\___\/  AVNET
+//       \======/
+//        \====/
+//---------------------------------------------------------------
+//
+// This design is the property of Avnet.  Publication of this
+// design is not authorized without written consent from Avnet.
+//
+// Please direct any questions to:  technical.support@avnet.com
+//
+// Disclaimer:
+//    Avnet, Inc. makes no warranty for the use of this code or design.
+//    This code is provided  "As Is". Avnet, Inc assumes no responsibility for
+//    any errors, which may appear in this code, nor does it make a commitment
+//    to update the information contained herein. Avnet, Inc specifically
+//    disclaims any implied warranties of fitness for a particular purpose.
+//                     Copyright(c) 2012 Avnet, Inc.
+//                             All rights reserved.
+//
+//----------------------------------------------------------------
+//
+// Create Date:         Oct 24, 2012
+// Design Name:         FMC-IMAGEON HDMI Video Frame Buffer
+// Module Name:         fmc_imageon_hdmi_framebuffer.c
+// Project Name:        FMC-IMAGEON HDMI Video Frame Buffer Program
+// Target Devices:      Spartan-6, Virtex-6, Kintex-6
+// Hardware Boards:     FMC-IMAGEON
+// 
+//
+// Tool versions:       ISE 14.3
+//
+// Description:         FMC-IMAGEON HDMI Demo Program
+//                      This application will configure the FMC-IMAGEON module
+//                      for the simple case of an HDMI passthrough:
+//                      - HDMI Input
+//                         - ADV7611 configured for 16 bit YCbCr 4:2:2 mode
+//                           with embedded syncs
+//                      - HDMI Output
+//                         - ADV7511 configured for 16 bit YCbCr 4:2:2 mode
+//                           with embedded syncs
+//                      If present, it will also reset the Video Timing Controller
+//                      that is used for timing in the AXI4-Stream bridges
+//
+// Dependencies:
+//
+// Revision:            Oct 24, 2012: 1.00 Initial version
+//                      Nov 01, 2012: 1.02 Update EDID content
+//                      Jan 10, 2013: 1.03 Add SSC on video output clock
+//                                         for CE compliance
+//
+//----------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "fmc_imageon_hdmi_framebuffer.h"
+#include "video_detector.h"
+#include <rgb2ycrcb.h>
+#include <ycrcb2rgb.h>
+#include <xil_cache.h>
+#include <xmog_algorithm_block.h>
+#include <xaxicdma.h>
+#include <xaxicdma_hw.h>
+#include <xscutimer.h>
+#include <xscugic.h>
+
+#define FGBG_WIDTH 		640
+#define FGBG_HEIGHT		480
+#define FGBG_TILE		1024
+
+//#define FGBG_WIDTH 		512
+//#define FGBG_HEIGHT		512
+//#define FGBG_TILE		1024
+
+#define FGBG_NCTXBRAMS 	5
+#define FGBG_MODELS		4
+
+#define PAR_WEIGHT_INIT     0.05
+#define PAR_VAR_INIT      (30*30)
+#define PAR_WINDOW_SIZE    100
+#define PAR_BG_THRESHOLD    0.7
+#define PAR_STD_THRESHOLD   2.5
+
+float c_alpha = 1.0/PAR_WINDOW_SIZE;
+float c_vinit = PAR_VAR_INIT;
+float c_varth = PAR_STD_THRESHOLD*PAR_STD_THRESHOLD;
+float c_winit = PAR_WEIGHT_INIT;
+float c_bgth = PAR_BG_THRESHOLD;
+
+#define TIMER_TOP    ((unsigned int)~0)
+#define CDMA_NUMBD 	1024
+#define CDMA_INTR 	XPAR_FABRIC_AXI_CDMA_0_CDMA_INTROUT_INTR			// IRQ_F2P[0] -> IRQ ID 61
+//#define CDMA_INTR 	65			// IRQ_F2P[0] -> IRQ ID 61
+
+#define CDMA_USE_SG 	0
+
+XAxiCdma cdma0;
+
+XScuTimer timer;
+
+XScuGic scugic0;
+
+XAxiCdma_Bd *BdSets_wcopy_head;
+XAxiCdma_Bd *BdSets_wcopy_cptr;
+int BdSets_wcopy_len, BdSets_wcopy_used;
+
+int cdma_irq_count = 0;
+
+
+Xuint8 fmc_imageon_hdmii_edid_content[256] =
+{
+		0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00,
+		0x06, 0xD4, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x16, 0x01, 0x03, 0x81, 0x46, 0x27, 0x78,
+		0x0A, 0x32, 0x30, 0xA1, 0x54, 0x52, 0x9E, 0x26,
+		0x0A, 0x49, 0x4B, 0xA3, 0x08, 0x00, 0x81, 0xC0,
+		0x81, 0x00, 0x81, 0x0F, 0x81, 0x40, 0x81, 0x80,
+		0x95, 0x00, 0xB3, 0x00, 0x01, 0x01, 0x02, 0x3A,
+		0x80, 0x18, 0x71, 0x38, 0x2D, 0x40, 0x58, 0x2C,
+		0x45, 0x00, 0xC4, 0x8E, 0x21, 0x00, 0x00, 0x1E,
+		0xA9, 0x1A, 0x00, 0xA0, 0x50, 0x00, 0x16, 0x30,
+		0x30, 0x20, 0x37, 0x00, 0xC4, 0x8E, 0x21, 0x00,
+		0x00, 0x1A, 0x00, 0x00, 0x00, 0xFC, 0x00, 0x46,
+		0x4D, 0x43, 0x2D, 0x49, 0x4D, 0x41, 0x47, 0x45,
+		0x4F, 0x4E, 0x0A, 0x20, 0x00, 0x00, 0x00, 0xFD,
+		0x00, 0x38, 0x4B, 0x20, 0x44, 0x11, 0x00, 0x0A,
+		0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x01, 0x54,
+		0x02, 0x03, 0x1F, 0x71, 0x4B, 0x90, 0x03, 0x04,
+		0x05, 0x12, 0x13, 0x14, 0x1F, 0x20, 0x07, 0x16,
+		0x26, 0x15, 0x07, 0x50, 0x09, 0x07, 0x01, 0x67,
+		0x03, 0x0C, 0x00, 0x10, 0x00, 0x00, 0x1E, 0x01,
+		0x1D, 0x00, 0x72, 0x51, 0xD0, 0x1E, 0x20, 0x6E,
+		0x28, 0x55, 0x00, 0xC4, 0x8E, 0x21, 0x00, 0x00,
+		0x1E, 0x01, 0x1D, 0x80, 0x18, 0x71, 0x1C, 0x16,
+		0x20, 0x58, 0x2C, 0x25, 0x00, 0xC4, 0x8E, 0x21,
+		0x00, 0x00, 0x9E, 0x8C, 0x0A, 0xD0, 0x8A, 0x20,
+		0xE0, 0x2D, 0x10, 0x10, 0x3E, 0x96, 0x00, 0xC4,
+		0x8E, 0x21, 0x00, 0x00, 0x18, 0x01, 0x1D, 0x80,
+		0x3E, 0x73, 0x38, 0x2D, 0x40, 0x7E, 0x2C, 0x45,
+		0x80, 0xC4, 0x8E, 0x21, 0x00, 0x00, 0x1E, 0x1A,
+		0x36, 0x80, 0xA0, 0x70, 0x38, 0x1F, 0x40, 0x30,
+		0x20, 0x25, 0x00, 0xC4, 0x8E, 0x21, 0x00, 0x00,
+		0x1A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01
+};
+
+double TimerElapsedMs(XScuTimer *timer)
+{
+	unsigned int tim = TIMER_TOP - XScuTimer_GetCounterValue(timer);
+	return (double)1000.0 / (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ/2) * tim;
+}
+
+static u32 AsU32(float f)
+{
+	u32 r = *(u32*)&f;
+	return r;
+}
+
+static int min(int a, int b) { return a < b ? a : b; }
+
+void wcopy_cpu(void *dest, void *src, int nw)
+{
+	unsigned *wdest = dest;
+	unsigned *wsrc = src;
+	while (nw > 0) {
+		*wdest++ = *wsrc++;
+		--nw;
+	}
+}
+
+void wcopy_barrier()
+{
+	while (XAxiCdma_IsBusy(&cdma0))
+		; /* wait */
+
+	int err = XAxiCdma_GetError(&cdma0);
+	if (err) {
+		xil_printf("ERROR during CDMA: 0x%x\n\r", err);
+	}
+
+#if CDMA_USE_SG
+	XAxiCdma_Bd *bds1 = NULL;
+	int cnt = XAxiCdma_BdRingFromHw(&cdma0, 8, &bds1);
+//	xil_printf("  wcopy_barrier: from hw: cnt %d, bds 0x%x\r\n", cnt, bds1);
+	if (cnt > 0) {
+		XAxiCdma_BdRingFree(&cdma0, cnt, bds1);
+	}
+#endif
+}
+
+
+void wcopy_dma(XAxiCdma *cdma, void *dest, void *src, int nw)
+{
+//	while (XAxiCdma_IsBusy(cdma))
+//		; /* wait */
+	wcopy_barrier();
+
+	int ret = XAxiCdma_SimpleTransfer(cdma, (u32)src, (u32)dest, 4*nw, NULL, NULL);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: CDMA SimpleTransfer: ret=%d, src=0x%x, dst=0x%x, nw=%d\n\r", ret, src, dest, nw);
+	}
+
+//	wcopy_barrier();
+}
+
+#if CDMA_USE_SG
+
+void wcopy_sgdma(XAxiCdma *cdma, void *dest, void *src, int nw)
+{
+	XAxiCdma_BdClearSts(BdSets_wcopy_cptr);
+	XAxiCdma_BdSetSrcBufAddr(BdSets_wcopy_cptr, (u32)src);
+	XAxiCdma_BdSetDstBufAddr(BdSets_wcopy_cptr, (u32)dest);
+	XAxiCdma_BdSetLength(BdSets_wcopy_cptr, 4*nw);
+	BdSets_wcopy_cptr = (void*)XAxiCdma_BdGetNextPtr(BdSets_wcopy_cptr);
+	++BdSets_wcopy_used;
+}
+
+
+XAxiCdma_Bd *wcopy_open_begin(int max_req)
+{
+	XAxiCdma_Bd *bds;
+	int ret = XAxiCdma_BdRingAlloc(&cdma0, max_req, &bds);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: CDMA wcopy_begin %d\n\r", ret);
+		exit(1);
+	}
+	BdSets_wcopy_head = BdSets_wcopy_cptr = bds;
+	BdSets_wcopy_len = max_req;
+	BdSets_wcopy_used = 0;
+	return bds;
+}
+
+void wcopy_close_submit()
+{
+	int ret = XAxiCdma_BdRingToHw(&cdma0, BdSets_wcopy_used, BdSets_wcopy_head, NULL, NULL);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: CDMA XAxiCdma_BdRingToHw(%d) =  %d\n\r", BdSets_wcopy_used, ret);
+		exit(1);
+	}
+
+	if (BdSets_wcopy_len-BdSets_wcopy_used > 0) {
+		/* free the unused part of the current bdring back to pool */
+		ret = XAxiCdma_BdRingUnAlloc(&cdma0, BdSets_wcopy_len-BdSets_wcopy_used, BdSets_wcopy_cptr);
+		if (ret != XST_SUCCESS) {
+			xil_printf("ERROR: CDMA XAxiCdma_BdRingUnAlloc(%d) = %d\n\r", BdSets_wcopy_len-BdSets_wcopy_used, ret);
+			exit(1);
+		}
+	}
+
+	BdSets_wcopy_head = BdSets_wcopy_cptr = NULL;
+	BdSets_wcopy_len = 0;
+	BdSets_wcopy_used = 0;
+}
+#endif
+
+void wcopy(void *dest, void *src, int nw)
+{
+
+#if CDMA_USE_SG
+	wcopy_sgdma(&cdma0, dest, src, nw);
+#else
+	wcopy_dma(&cdma0, dest, src, nw);
+#endif
+}
+
+
+int cdma_test()
+{
+	xil_printf("CDMA Test:\n\r");
+	u32 *ibuf = malloc(4*1024);
+//	u32 *obuf = malloc(4*1024);
+	u32 *obuf = (u32*)XPAR_AXI_BRAM_FRAME_S_AXI_BASEADDR;
+//	u32 *obuf = (u32*)XPAR_AXI_BRAM_AUX_S_AXI_BASEADDR;
+	int i;
+	for (i = 0; i < 1024; ++i) {
+		ibuf[i] = i;
+		obuf[i] = 0;
+	}
+	Xil_DCacheFlush();
+	wcopy_dma(&cdma0, obuf, ibuf, 1024);
+//	wcopy_barrier();
+	XAxiCdma_DumpRegisters(&cdma0);
+	int errs = 0;
+	for (i = 0; i < 1024; ++i) {
+		if (obuf[i] != i) {
+			xil_printf("  ERR: [%d]: %d != %d\n\r", i, ibuf[i], obuf[i]);
+			++errs;
+		}
+	}
+	return errs;
+}
+
+#if CDMA_USE_SG
+int cdma_test2()
+{
+	xil_printf("CDMA Test 2:\n\r");
+	u32 *ibuf = malloc(4*1024);
+//	u32 *obuf = malloc(4*1024);
+	u32 *obuf = (u32*)XPAR_AXI_BRAM_FRAME_S_AXI_BASEADDR;
+//	u32 *obuf = (u32*)XPAR_AXI_BRAM_AUX_S_AXI_BASEADDR;
+	int i;
+	for (i = 0; i < 1024; ++i) {
+		ibuf[i] = i;
+		obuf[i] = 0;
+	}
+	Xil_DCacheFlush();
+
+	XAxiCdma_Bd *bds = wcopy_open_begin(8);
+	wcopy_sgdma(&cdma0, obuf, ibuf, 1024);
+	wcopy_close_submit();
+
+//	sleep(1);
+	wcopy_barrier();
+
+
+	XAxiCdma_DumpRegisters(&cdma0);
+	int errs = 0;
+	for (i = 0; i < 128; ++i) {
+		if (obuf[i] != i) {
+			xil_printf("  ERR: [%d]: %d != %d\n\r", i, ibuf[i], obuf[i]);
+			++errs;
+		}
+	}
+
+	xil_printf("CDMA irq count = %d\n\r", cdma_irq_count);
+	if (cdma_irq_count == 0) {
+		xil_printf("WARNING: No CDMA irq has arrived so far! Power cycle the board.\r\n");
+	}
+	return errs;
+}
+#endif
+
+void init_cdata(int w, int h, Xuint32 *ctxdata)
+{
+//	Xuint32 *const brams_ctx[FGBG_NCTXBRAMS] = {
+//	   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN0_S_AXI_BASEADDR,
+//	   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN1_S_AXI_BASEADDR,
+//	   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN2_S_AXI_BASEADDR,
+//	   			   (Xuint32 *)XPAR_AXI_BRAM_VARSUM_S_AXI_BASEADDR,
+//	   			   (Xuint32 *)XPAR_AXI_BRAM_WEIGHT_S_AXI_BASEADDR
+//	   	   };
+
+	const int ntiles = w*h/FGBG_TILE;
+	float *fctxdata = (float*)ctxdata;
+	int i, t, c;
+	xil_printf("init_cdata: w=%d, h=%d, ntiles=%d, ctxdata=0x%x\n\r", w, h, ntiles, fctxdata);
+
+	for (t = 0; t < ntiles; ++t) {
+		for (c = 0; c < 3; ++c) {
+			// mean0, mean1, mean2
+			for (i = 0; i < FGBG_TILE*FGBG_MODELS; ++i) {
+				*fctxdata++ = 0.0;
+			}
+		}
+		// varsum
+		for (i = 0; i < FGBG_TILE*FGBG_MODELS; ++i) {
+			*fctxdata++ = (float)PAR_VAR_INIT;
+		}
+		// weight
+		for (i = 0; i < FGBG_TILE*FGBG_MODELS; ++i) {
+			*fctxdata++ = (float)PAR_WEIGHT_INIT;
+		}
+	}
+
+	xil_printf("init_cdata: Fin: ctxdata=0x%x\n\r", fctxdata);
+}
+
+int vdma_tx_set_park_frame(XAxiVdma *vdma, int frmnum)
+{
+   u32 FrmBits = frmnum & XAXIVDMA_PARKPTR_READREF_MASK;
+
+   u32 RegValue = XAxiVdma_ReadReg(vdma->BaseAddr,
+					  XAXIVDMA_PARKPTR_OFFSET);
+
+   RegValue &= ~XAXIVDMA_PARKPTR_READREF_MASK;
+
+   RegValue |= FrmBits;
+
+   XAxiVdma_WriteReg(vdma->BaseAddr,
+				XAXIVDMA_PARKPTR_OFFSET, RegValue);
+}
+
+void fmc_vres_get_timing(Xuint32 resolutionId, fmc_imageon_video_timing_t *fmc)
+{
+	vres_timing_t timing;
+	vres_get_timing(resolutionId, &timing);
+
+	fmc->HActiveVideo = timing.HActiveVideo;
+	fmc->HFrontPorch = timing.HFrontPorch;
+	fmc->HSyncWidth = timing.HSyncWidth;
+	fmc->HBackPorch = timing.HBackPorch;
+	fmc->HSyncPolarity = timing.HSyncPolarity;
+
+	   // Vertical Timing
+	fmc->VActiveVideo = timing.VActiveVideo;
+	fmc->VFrontPorch = timing.VFrontPorch;
+	fmc->VSyncWidth = timing.VSyncWidth;
+	fmc->VBackPorch = timing.VBackPorch;
+	fmc->VSyncPolarity = timing.VSyncPolarity;
+}
+
+static void my_XAxiCdma_IntrHandler(void *d)
+{
+	cdma_irq_count++;
+//	xil_printf("[my_XAxiCdma_IntrHandler]");
+	XAxiCdma_IntrHandler(d);
+//	xil_printf("[head=%d, tail=%d]\r\n", cdma0.SgHandlerHead, cdma0.SgHandlerTail);
+}
+
+/******************************************************************************/
+/**
+ *
+ * This function connects the interrupt handler of the interrupt controller to
+ * the processor.  This function is seperate to allow it to be customized for
+ * each application. Each processor or RTOS may require unique processing to
+ * connect the interrupt handler.
+ *
+ * @param	GicPtr is the GIC instance pointer.
+ * @param	DmaPtr is the DMA instance pointer.
+ *
+ * @return	None.
+ *
+ * @note	None.
+ *
+ ****************************************************************************/
+int SetupInterruptSystem(XScuGic *GicPtr)
+{
+	int Status;
+	XScuGic_Config *GicConfig;
+
+
+	Xil_ExceptionInit();
+
+	/*
+	 * Initialize the interrupt controller driver so that it is ready to
+	 * use.
+	 */
+	GicConfig = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
+	if (NULL == GicConfig) {
+		return XST_FAILURE;
+	}
+
+	Status = XScuGic_CfgInitialize(GicPtr, GicConfig,
+				       GicConfig->CpuBaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Connect the interrupt controller interrupt handler to the hardware
+	 * interrupt handling logic in the processor.
+	 */
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
+			     (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+			     GicPtr);
+
+	/*
+	 * Connect the device driver handlers that will be called when an interrupt
+	 * for the device occurs, the device driver handler performs the specific
+	 * interrupt processing for the device
+	 */
+	xil_printf("CDMA interrupt ID = %d\n\r", CDMA_INTR);
+	/*
+	 * Connect the Fault ISR
+	 */
+	Status = XScuGic_Connect(GicPtr,
+				 CDMA_INTR,
+				 (Xil_InterruptHandler)my_XAxiCdma_IntrHandler,
+				 (void *)&cdma0);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XScuGic_Enable(GicPtr, CDMA_INTR);
+
+#if 0
+	/*
+	 * Connect the Done ISR for all 8 channels of DMA 0
+	 */
+	Status = XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_0,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_0,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_1,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_1,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_2,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_2,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_3,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_3,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_4,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_4,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_5,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_5,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_6,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_6,
+				 (void *)DmaPtr);
+	Status |= XScuGic_Connect(GicPtr,
+				 DMA_DONE_INTR_7,
+				 (Xil_InterruptHandler)XDmaPs_DoneISR_7,
+				 (void *)DmaPtr);
+
+	if (Status != XST_SUCCESS)
+		return XST_FAILURE;
+
+	/*
+	 * Enable the interrupts for the device
+	 */
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_0);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_1);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_2);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_3);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_4);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_5);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_6);
+	XScuGic_Enable(GicPtr, DMA_DONE_INTR_7);
+	XScuGic_Enable(GicPtr, DMA_FAULT_INTR);
+#endif
+
+	Xil_ExceptionEnable();
+
+	return XST_SUCCESS;
+
+}
+
+
+int fmc_imageon_hdmi_framebuffer_init( fmc_imageon_hdmi_framebuffer_t *pDemo )
+{
+   int ret;
+   Xuint32 timeout = 100;
+   Xuint32 iterations = 0;
+
+   xil_printf("\n\r");
+   xil_printf("------------------------------------------------------\n\r");
+   xil_printf("--       FMC-IMAGEON HDMI Video Frame Buffer        --\n\r");
+   xil_printf("------------------------------------------------------\n\r");
+   xil_printf("\n\r");
+
+   // ---------------------------------------
+   xil_printf( "=== FGBG-MOG Initialization ...\n\r" );
+
+   XMog_algorithm_block mog;
+   ret = XMog_algorithm_block_Initialize(&mog, XPAR_MOG_ALGORITHM_BLOCK_0_DEVICE_ID);
+   if ( ret != XST_SUCCESS ) {
+      xil_printf( "ERROR : Failed to init FGBG-MOG: %d\n\r", ret );
+      exit(0);
+   }
+   if (!XMog_algorithm_block_IsReady(&mog)) {
+	   xil_printf("ERROR: FGBG-MOG is not ready!");
+	   exit(1);
+   }
+
+	XMog_algorithm_block_SetC_alpha(&mog, AsU32(c_alpha));
+	XMog_algorithm_block_SetC_vinit(&mog, AsU32(c_vinit));
+	XMog_algorithm_block_SetC_varth(&mog, AsU32(c_varth));
+	XMog_algorithm_block_SetC_winit(&mog, AsU32(c_winit));
+	XMog_algorithm_block_SetC_bgth(&mog,  AsU32(c_bgth));
+	XMog_algorithm_block_SetFlags(&mog,   2); 		// 2 = fg in orig pixels, bg in black.
+
+	if (XMog_algorithm_block_GetC_alpha(&mog) != AsU32(c_alpha)) {
+		xil_printf("ERROR: hw set/get c_alpha incorrect: %08x != %08x\n\r",
+				XMog_algorithm_block_GetC_alpha(&mog), AsU32(c_alpha));
+		exit(1);
+	}
+
+	init_cdata(FGBG_WIDTH, FGBG_HEIGHT, (Xuint32 *)pDemo->uBaseAddr_MEM_FgBgCtxData);
+
+
+	// ------------------------------------------------
+	xil_printf("=== AXI-CDMA init...\n\r");
+	ret = XAxiCdma_CfgInitialize(&cdma0, XAxiCdma_LookupConfig(XPAR_AXI_CDMA_0_DEVICE_ID), XPAR_AXI_CDMA_0_BASEADDR);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: CDMA init failed: %d\n\r", ret);
+		exit(1);
+	}
+
+	XAxiCdma_Reset(&cdma0);
+	while (!XAxiCdma_ResetIsDone(&cdma0))
+		; /* wait */
+
+	if (cdma_test() > 0) {
+		exit(1);
+	}
+
+
+	// ---------------------------------------
+	xil_printf( "=== SCU-GIC Initialization ...\n\r" );
+
+	ret = SetupInterruptSystem(&scugic0);
+	if ( ret != XST_SUCCESS ) {
+	  xil_printf( "ERROR: SCU GIC init failed: %d\n\r", ret );
+	  exit(0);
+	}
+
+	XAxiCdma_IntrEnable(&cdma0, XAXICDMA_XR_IRQ_IOC_MASK | XAXICDMA_XR_IRQ_ERROR_MASK | XAXICDMA_XR_IRQ_ALL_MASK);
+
+
+#if CDMA_USE_SG
+	int bdring_memsize = XAxiCdma_BdRingMemCalc(XAXICDMA_BD_MINIMUM_ALIGNMENT, CDMA_NUMBD) + XAXICDMA_BD_MINIMUM_ALIGNMENT;
+	u32 bdring_mem = (((u32)malloc(bdring_memsize)) + XAXICDMA_BD_MINIMUM_ALIGNMENT) & ~(XAXICDMA_BD_MINIMUM_ALIGNMENT-1);
+	xil_printf("CDMA: Allocated %d B for %d BDs at 0x%x\r\n", bdring_memsize, CDMA_NUMBD, bdring_mem);
+	ret = XAxiCdma_BdRingCreate(&cdma0, bdring_mem, bdring_mem, XAXICDMA_BD_MINIMUM_ALIGNMENT, CDMA_NUMBD);
+	xil_printf( "=== XAxiCdma_BdRingCreate(); ...\n\r" );
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: CDMA BdRingCreate: %d\n\r", ret);
+		exit(1);
+	}
+
+	if (cdma_test2() > 0) {
+		exit(1);
+	}
+#endif
+//	exit(0);
+
+	// ------------------------------------------------
+	xil_printf( "=== Timer Initialization ...\n\r" );
+	ret = XScuTimer_CfgInitialize(&timer, XScuTimer_LookupConfig(XPAR_PS7_SCUTIMER_0_DEVICE_ID), 0xF8F00600);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: Timer init failed: %d\n\r", ret);
+		exit(1);
+	}
+
+	ret = XScuTimer_SelfTest(&timer);
+	if (ret != XST_SUCCESS) {
+		xil_printf("ERROR: Timer selftest failed: %d\n\r", ret);
+		exit(1);
+	}
+
+	XScuTimer_SetPrescaler(&timer, 0);
+	XScuTimer_LoadTimer(&timer, TIMER_TOP);
+	XScuTimer_Start(&timer);
+
+
+	// ------------------------------------------------
+   xil_printf( "=== FMC-IMAGEON Initialization ...\n\r" );
+
+   ret = fmc_iic_xps_init(&(pDemo->fmc_imageon_iic),"FMC-IMAGEON I2C Controller", pDemo->uBaseAddr_IIC_FmcImageon );
+   if ( !ret )
+   {
+      xil_printf( "ERROR : Failed to open FMC-IIC driver\n\r" );
+      exit(0);
+   }
+
+   fmc_imageon_init(&(pDemo->fmc_imageon), "FMC-IMAGEON", &(pDemo->fmc_imageon_iic));
+   pDemo->fmc_imageon.bVerbose = pDemo->bVerbose;
+
+   // Configure Video Clock Synthesizer
+   fmc_imageon_vclk_init( &(pDemo->fmc_imageon) );
+//   int vidoutclk_idx = FMC_IMAGEON_VCLK_FREQ_65_000_000;
+   int vidoutclk_idx = FMC_IMAGEON_VCLK_FREQ_74_250_000;
+//   int vidoutclk_idx = FMC_IMAGEON_VCLK_FREQ_148_500_000;
+   fmc_imageon_vclk_config( &(pDemo->fmc_imageon), vidoutclk_idx);
+
+   // Initialize HDMI Input (including EDID content)
+   xil_printf( "HDMI Input Initialization ...\n\r" );
+   ret = fmc_imageon_hdmii_init( &(pDemo->fmc_imageon),
+                                 1, // hdmiiEnable = 1
+                                 1, // editInit = 1
+                                 fmc_imageon_hdmii_edid_content
+                                 );
+   if ( !ret )
+   {
+      xil_printf( "ERROR : Failed to init HDMI Input Interface\n\r" );
+      exit(0);
+   }
+
+#if 1
+   // Configure Video Clock Synthesizer
+   xil_printf( "Video Clock Synthesizer Configuration ...\n\r" );
+   fmc_imageon_vclk_config( &(pDemo->fmc_imageon), vidoutclk_idx);
+   sleep(1);
+#endif
+
+#if 1
+   xil_printf( "Enabling spread-spectrum clocking (SSC)\n\r" );
+   xil_printf( "\ttype=down-spread, amount=-0.75%%\n\r" );
+   {
+	   Xuint8 num_bytes;
+	   int i;
+	   Xuint8 iic_cdce913_ssc_on[3][2]=
+	   {
+	      0x10, 0x6D, // SSC = 011 (0.75%)
+	      0x11, 0xB6, //
+	      0x12, 0xDB  //
+	   };
+       fmc_imageon_iic_mux( &(pDemo->fmc_imageon), FMC_IMAGEON_I2C_SELECT_VID_CLK );
+       for ( i = 0; i < 3; i++ )
+       {
+           num_bytes = pDemo->fmc_imageon.pIIC->fpIicWrite( pDemo->fmc_imageon.pIIC, FMC_IMAGEON_VID_CLK_ADDR,
+       		(0x80 | iic_cdce913_ssc_on[i][0]), &(iic_cdce913_ssc_on[i][1]), 1);
+       }
+   }
+#endif
+
+   // Set HDMI output to 1080P60 resolution
+#if 0
+   pDemo->hdmio_resolution = VIDEO_RESOLUTION_1080P;
+   pDemo->hdmio_width  = 1920;
+   pDemo->hdmio_height = 1080;
+#else
+   pDemo->hdmio_resolution = VIDEO_RESOLUTION_720P;
+   pDemo->hdmio_width  = 1280;
+   pDemo->hdmio_height = 720;
+
+//   pDemo->hdmio_resolution = VIDEO_RESOLUTION_XGA;
+//   pDemo->hdmio_width  = 1024;
+//   pDemo->hdmio_height = 768;
+#endif
+
+   //pDemo->hdmio_timing.IsHDMI        = 1; // HDMI Mode
+   pDemo->hdmio_timing.IsHDMI        = 0; // DVI Mode
+   pDemo->hdmio_timing.IsEncrypted   = 0;
+   pDemo->hdmio_timing.IsInterlaced  = 0;
+   pDemo->hdmio_timing.ColorDepth    = 8;
+
+#if 0
+   pDemo->hdmio_timing.HActiveVideo  = 1920;
+   pDemo->hdmio_timing.HFrontPorch   =   88;
+   pDemo->hdmio_timing.HSyncWidth    =   44;
+   pDemo->hdmio_timing.HSyncPolarity =    1;
+   pDemo->hdmio_timing.HBackPorch    =  148;
+
+   pDemo->hdmio_timing.VActiveVideo  = 1080;
+   pDemo->hdmio_timing.VFrontPorch   =    4;
+   pDemo->hdmio_timing.VSyncWidth    =    5;
+   pDemo->hdmio_timing.VSyncPolarity =    1;
+   pDemo->hdmio_timing.VBackPorch    =   36;
+#endif
+   fmc_vres_get_timing(pDemo->hdmio_resolution, &pDemo->hdmio_timing);
+
+
+   xil_printf( "HDMI Output Initialization ...\n\r" );
+   ret = fmc_imageon_hdmio_init( &(pDemo->fmc_imageon),
+ 	                             1,                      // hdmioEnable = 1
+ 	                             &(pDemo->hdmio_timing), // pTiming
+ 	                             0                       // waitHPD = 0
+ 	                             );
+   if ( !ret )
+   {
+      xil_printf( "ERROR : Failed to init HDMI Output Interface\n\r" );
+      //exit(0);
+   }
+
+   /* init output color conversion RGB2YCrCb */
+   xil_printf("Setting up RGB2YCrCb...\n\r");
+   const Xuint32 v_rgb2ycrcb_base = XPAR_V_RGB2YCRCB_0_BASEADDR;
+   RGB_Reset(v_rgb2ycrcb_base);
+   RGB_ClearReset(v_rgb2ycrcb_base);
+   RGB_Enable(v_rgb2ycrcb_base);
+   RGB_WriteReg(v_rgb2ycrcb_base, RGB_ACTIVE_SIZE, (pDemo->hdmio_width) | (pDemo->hdmio_height << 16));
+   RGB_RegUpdateEnable(v_rgb2ycrcb_base);
+
+   // Clear frame stores (TX)
+   Xuint32 i;
+   Xuint32 storage_size = pDemo->uNumFrames_HdmiFrameBuffer * ((1920*1080)<<2);
+   volatile Xuint32 *pStorageMem = (Xuint32 *)pDemo->uBaseAddr_MEM_HdmiFrameBuffer;
+   volatile Xuint32 *pStorageMemB =pDemo->uBaseAddr_MEM_HdmiFrameBuffer + (pDemo->uNumFrames_HdmiFrameBuffer * 4*(1920*1080));  // uMemAddr
+   for ( i = 0; i < storage_size; i += 4 )
+   {
+      // Black Pixel
+	  // *pStorageMem++ = 0x0080; // Y (luma) [hi], UV [lo]
+      //*pStorageMem++ = 0x80; // CbCr (chroma)
+      //*pStorageMem++ = 0x00; // Y (luma)
+	   // 0-R-B-G
+ //     *pStorageMem++ = 0x00808080;
+	   *pStorageMem++ = 0xffffff;
+	   //*pStorageMem++ = i*4;
+   }
+   Xil_DCacheFlush();
+
+
+   // Initialize Output Side of AXI VDMA
+   xil_printf( "Video DMA (Output Side) Initialization ...\n\r" );
+   vfb_common_init(
+      pDemo->uDeviceId_VDMA_HdmiFrameBuffer, // uDeviceId
+      &(pDemo->vdma_hdmi)                    // pAxiVdma
+      );
+   if (vfb_tx_init(
+		  &(pDemo->vdma_hdmi),                   // pAxiVdma
+		  &(pDemo->vdmacfg_hdmi_read),           // pReadCfg
+		  pDemo->hdmio_resolution,               // uVideoResolution
+		  pDemo->hdmio_resolution,               // uStorageResolution
+		  pDemo->uBaseAddr_MEM_HdmiFrameBuffer,  // uMemAddr
+		  pDemo->uNumFrames_HdmiFrameBuffer      // uNumFrames
+      ) != 0) {
+	   xil_printf("ERROR: vfb_tx_init failed!\n\r");
+   }
+
+   // Configure VTC on output data path
+   xil_printf( "Video Timing Controller (generator) Initialization ...\n\r" );
+   vgen_init( &(pDemo->vtc_hdmio_generator), pDemo->uDeviceId_VTC_HdmioGenerator );
+   vgen_config( &(pDemo->vtc_hdmio_generator), pDemo->hdmio_resolution, 2 );
+
+  while (1)
+  {
+   if ( iterations > 0 )
+   {
+      xil_printf( "\n\rPress ENTER to re-start ...\n\r" );
+      getchar();
+   }
+   iterations++;
+
+   xil_printf( "Waiting for ADV7611 to locked on incoming video ...\n\r" );
+   pDemo->hdmii_locked = 0;
+   timeout = 100;
+   while ( !(pDemo->hdmii_locked) && timeout-- )
+   {
+      usleep(100000); // wait 100msec ...
+      pDemo->hdmii_locked = fmc_imageon_hdmii_get_lock( &(pDemo->fmc_imageon) );
+   }
+   if ( !(pDemo->hdmii_locked) )
+   {
+      xil_printf( "\tERROR : ADV7611 has NOT locked on incoming video, aborting !\n\r" );
+      //return -1;
+      continue;
+   }
+   xil_printf( "\tADV7611 Video Input LOCKED\n\r" );
+   usleep(100000); // wait 100msec for timing to stabilize
+
+   // Get Video Input information
+   fmc_imageon_hdmii_get_timing( &(pDemo->fmc_imageon), &(pDemo->hdmii_timing) );
+   pDemo->hdmii_width  = pDemo->hdmii_timing.HActiveVideo;
+   pDemo->hdmii_height = pDemo->hdmii_timing.VActiveVideo;
+   pDemo->hdmii_resolution = vres_detect( pDemo->hdmii_width, pDemo->hdmii_height );
+
+   xil_printf( "ADV7611 Video Input Information\n\r" );
+    xil_printf( "\tVideo Input      = %s", pDemo->hdmii_timing.IsHDMI ? "HDMI" : "DVI" );
+   xil_printf( "%s", pDemo->hdmii_timing.IsEncrypted ? ", HDCP Encrypted" : "" );
+   xil_printf( ", %s\n\r", pDemo->hdmii_timing.IsInterlaced ? "Interlaced" : "Progressive" );
+   xil_printf( "\tColor Depth      = %d bits per channel\n\r", pDemo->hdmii_timing.ColorDepth );
+   xil_printf( "\tHSYNC Timing     = hav=%04d, hfp=%02d, hsw=%02d(hsp=%d), hbp=%03d\n\r",
+      pDemo->hdmii_timing.HActiveVideo,
+      pDemo->hdmii_timing.HFrontPorch,
+      pDemo->hdmii_timing.HSyncWidth, pDemo->hdmii_timing.HSyncPolarity,
+      pDemo->hdmii_timing.HBackPorch
+      );
+   xil_printf( "\tVSYNC Timing     = vav=%04d, vfp=%02d, vsw=%02d(vsp=%d), vbp=%03d\n\r",
+      pDemo->hdmii_timing.VActiveVideo,
+      pDemo->hdmii_timing.VFrontPorch,
+      pDemo->hdmii_timing.VSyncWidth, pDemo->hdmii_timing.VSyncPolarity,
+      pDemo->hdmii_timing.VBackPorch
+      );
+   xil_printf( "\tVideo Dimensions = %d x %d\n\r", pDemo->hdmii_width, pDemo->hdmii_height );
+
+   if ( (pDemo->hdmii_resolution) == -1 )
+   {
+      xil_printf( "\tERROR : Invalid resolution, aborting !\n\r" );
+      //return -1;
+      continue;
+   }
+
+   // Reset VTC on input data path
+   vdet_init( &(pDemo->vtc_hdmii_detector), pDemo->uDeviceId_VTC_HdmiiDetector );
+   vdet_reset( &(pDemo->vtc_hdmii_detector) );
+
+   xil_printf( "Video DMA (Input Side) Initialization ...\n\r" );
+
+   // Stop Input Side of AXI_VDMA (from previous iteration)
+   vfb_rx_stop(
+      &(pDemo->vdma_hdmi)                    // pAxiVdma
+      );
+
+   // Clear frame stores (RX)
+   Xuint32 i;
+   Xuint32 storage_size = pDemo->uNumFrames_HdmiFrameBuffer * ((1920*1080)<<2);
+   volatile Xuint32 *pStorageMem = (Xuint32 *)(pDemo->uBaseAddr_MEM_HdmiFrameBuffer + (pDemo->uNumFrames_HdmiFrameBuffer * 4*(1920*1080)));
+   for ( i = 0; i < storage_size; i += 4 )
+   {
+      // Black Pixel
+	   *pStorageMem++ = 0x0;
+	//   *pStorageMem++ = 0x0080;
+      //*pStorageMem++ = 0x80; // CbCr (chroma)
+      //*pStorageMem++ = 0x00; // Y (luma)
+   }
+   Xil_DCacheFlush();
+
+   // Initialize Input Side of AXI VDMA
+   vfb_rx_init(
+      &(pDemo->vdma_hdmi),                   // pAxiVdma
+      &(pDemo->vdmacfg_hdmi_write),          // pWriteCfg
+      pDemo->hdmii_resolution,               // uVideoResolution
+      //pDemo->hdmio_resolution,               // uStorageResolution
+      pDemo->hdmii_resolution,               // uStorageResolution
+      pDemo->uBaseAddr_MEM_HdmiFrameBuffer + (pDemo->uNumFrames_HdmiFrameBuffer * 4*(1920*1080)),  // uMemAddr
+      pDemo->uNumFrames_HdmiFrameBuffer      // uNumFrames
+      );
+
+   xil_printf("Setting up YCrCb2RGB...\n\r");
+   const Xuint32 v_ycrcb2rgb_base = XPAR_V_YCRCB2RGB_0_BASEADDR;
+   YCC_Reset(v_ycrcb2rgb_base);
+   YCC_ClearReset(v_ycrcb2rgb_base);
+   YCC_Enable(v_ycrcb2rgb_base);
+   YCC_WriteReg(v_ycrcb2rgb_base, YCC_ACTIVE_SIZE, (pDemo->hdmii_width) | (pDemo->hdmii_height << 16));
+   /* Bypass: */
+//   YCC_WriteReg(v_ycrcb2rgb_base, YCC_CONTROL,  YCC_ReadReg(v_ycrcb2rgb_base, YCC_CONTROL) | 0x10);
+   YCC_RegUpdateEnable(v_ycrcb2rgb_base);
+
+   xil_printf( "HDMI Output Re-Initialization ...\n\r" );
+   ret = fmc_imageon_hdmio_init( &(pDemo->fmc_imageon),
+ 	                             1,                      // hdmioEnable = 1
+ 	                             &(pDemo->hdmio_timing), // pTiming
+ 	                             0                       // waitHPD = 0
+ 	                             );
+   if ( !ret )
+   {
+      xil_printf( "ERROR : Failed to init HDMI Output Interface\n\r" );
+      //exit(0);
+   }
+
+#if 1 // Activate for debug
+   sleep(1);
+   // Status of AXI VDMA
+   vfb_dump_registers( &(pDemo->vdma_hdmi) );
+   if ( vfb_check_errors( &(pDemo->vdma_hdmi), 1/*clear errors, if any*/ ) )
+   {
+      vfb_dump_registers( &(pDemo->vdma_hdmi) );
+   }
+#endif
+
+   xil_printf("\n\r");
+   xil_printf( "Done\n\r" );
+   xil_printf("\n\r");
+
+#if 0
+   while (1) {
+	   int curr_park = XAxiVdma_CurrFrameStore(&(pDemo->vdma_hdmi), XAXIVDMA_READ);
+	   int next_park = (curr_park+1) & 0x1;
+	   xil_printf("VDMA TX: CurrFrameStore=%d, next=%d\n\r", curr_park, next_park);
+	   vdma_tx_set_park_frame(&(pDemo->vdma_hdmi), next_park);
+
+	   while (XAxiVdma_CurrFrameStore(&(pDemo->vdma_hdmi), XAXIVDMA_READ) != next_park)
+		   ; /* wait */
+
+	   /* copy input img to the (old) curr_park */
+
+	   sleep(1);
+   }
+#endif
+
+   Xil_DCacheFlush();
+   Xil_DCacheDisable();
+   int counter_f=0;
+   while (1) {
+	   XScuTimer_RestartTimer(&timer);
+	   counter_f++;
+   	   int tx_curr_park = XAxiVdma_CurrFrameStore(&(pDemo->vdma_hdmi), XAXIVDMA_READ);
+   	   int tx_next_park = (tx_curr_park+1) & 0x1;
+   	   xil_printf("VDMA TX: CurrFrameStore=%d, next=%d\n\r", tx_curr_park, tx_next_park);
+
+   	   vdma_tx_set_park_frame(&(pDemo->vdma_hdmi), tx_next_park);
+
+   	   while (XAxiVdma_CurrFrameStore(&(pDemo->vdma_hdmi), XAXIVDMA_READ) != tx_next_park)
+   		   ; /* wait */
+
+   	   /* copy input img to the (old) curr_park */
+   	   int rx_curr_frm = XAxiVdma_CurrFrameStore(&(pDemo->vdma_hdmi), XAXIVDMA_WRITE);
+   	   int rx_prev_frm = (rx_curr_frm == 0) ? pDemo->uNumFrames_HdmiFrameBuffer-1 : rx_curr_frm-1;
+   	   xil_printf("VDMA RX: CurrFrameStore=%d, prev=%d\n\r", rx_curr_frm, rx_prev_frm);
+
+   	   double ms_newframe = TimerElapsedMs(&timer);
+
+   	   /* Copy original source image 640x480 to the output FB */
+   	   Xuint32 *srcfrm = (Xuint32 *) pDemo->vdmacfg_hdmi_write.FrameStoreStartAddr[rx_prev_frm];
+   	   Xuint32 *dstfrm = (Xuint32 *) pDemo->vdmacfg_hdmi_read.FrameStoreStartAddr[tx_curr_park]+ FGBG_WIDTH;
+   	   Xuint32 *srcfrm_b = (Xuint32 *) pDemo->vdmacfg_hdmi_write.FrameStoreStartAddr[rx_prev_frm];
+   	   xil_printf("  srcfrm=0x%x, dstfrm=0x%x\n\r", srcfrm, dstfrm);
+   	   //======================================store bg to ctx_data address======================
+   	Xuint32 *ctx_data = 0x15000000;
+  	   if(counter_f==7)
+   	   {
+  		 *ctx_data=34;
+			int x, y;
+			for (y = 0; y < FGBG_HEIGHT; ++y) {
+				wcopy(ctx_data, srcfrm_b, FGBG_WIDTH);
+				srcfrm_b += pDemo->hdmii_width;
+				ctx_data+=FGBG_WIDTH;
+			}
+			xil_printf("  wo jiu da suan jin yi ci %d\n\r",counter_f);
+/*  		int x, y;
+  		x=(FGBG_HEIGHT/4)*FGBG_WIDTH;
+  					for (y = 0; y < x; y++) {
+  						*ctx_data++=0xffffffff;
+  					}
+		x=(FGBG_HEIGHT/4)*FGBG_WIDTH;
+					for (y = 0; y < x; y++) {
+						*ctx_data++=0x808080;
+					}
+		x=(FGBG_HEIGHT/4)*FGBG_WIDTH;
+					for (y = 0; y < x; y++) {
+						*ctx_data++=0x008080;
+					}
+		x=(FGBG_HEIGHT/4)*FGBG_WIDTH;
+					for (y = 0; y < x; y++) {
+						*ctx_data++=0x0;
+					}
+*/
+   	   }
+   	   else
+   	   {
+   		   ctx_data = 0x15000000;
+ //  		if(*ctx_data!=34){xil_printf("  =============================================================== %d\n\r",counter_f);}
+   		   int x, y;
+   		   	 for (y = 0; y < FGBG_HEIGHT; ++y) {
+					//wcopy(dstfrm, ctx_data, FGBG_WIDTH);
+					wcopy(dstfrm, srcfrm, FGBG_WIDTH);
+					ctx_data += FGBG_HEIGHT;
+					dstfrm += pDemo->hdmio_width;srcfrm += pDemo->hdmii_width;
+//					if(*ctx_data!=*srcfrm){xil_printf("  =============================================================== %d\n\r",counter_f);}
+   					}
+
+   	   }
+   	   if(counter_f>100)
+   	   {
+   		   counter_f=10;
+   	   }
+
+
+
+
+   	//======================================store bg to ctx_data address======================
+   	srcfrm = (Xuint32 *) pDemo->vdmacfg_hdmi_write.FrameStoreStartAddr[rx_prev_frm];
+   	dstfrm = (Xuint32 *) pDemo->vdmacfg_hdmi_read.FrameStoreStartAddr[tx_curr_park];
+#if CDMA_USE_SG
+   	   wcopy_open_begin(FGBG_HEIGHT);
+#endif
+   	   int x, y;
+   	   for (y = 0; y < (FGBG_HEIGHT); ++y) {
+   		   // copy line
+#if CDMA_USE_SG
+   		   wcopy_sgdma(&cdma0, dstfrm, srcfrm, FGBG_WIDTH);
+#else
+   		   wcopy(dstfrm, srcfrm, FGBG_WIDTH);
+#endif
+   		   dstfrm += pDemo->hdmio_width;
+   		   srcfrm += pDemo->hdmii_width;
+   	   }
+#if CDMA_USE_SG
+   	   wcopy_close_submit();
+#endif
+
+   	   //=====================================test this copy all=======================================
+/*   	int c_all;
+   	c_all=FGBG_HEIGHT*FGBG_WIDTH;
+   	wcopy(dstfrm, srcfrm, c_all);
+   	*/
+   	   	//=====================================test this copy all end=======================================
+   	   //wcopy_barrier();
+   	   double ms_copyorig = TimerElapsedMs(&timer) - ms_newframe;
+//===============================================motion detection part ==================================================================
+   	/*
+   	 //================================now common out this part====================================================================
+   	   //sleep(1); continue;
+
+   	   Xuint32 *ctx_data = (Xuint32 *)pDemo->uBaseAddr_MEM_FgBgCtxData;
+   	   Xuint32 *const bram_frame = (Xuint32 *)XPAR_AXI_BRAM_FRAME_S_AXI_BASEADDR;
+   	   Xuint32 *const bram_outmask = (Xuint32 *)XPAR_AXI_BRAM_OUTMASK_S_AXI_BASEADDR;
+   	   Xuint32 *const brams_ctx[FGBG_NCTXBRAMS] = {
+   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN0_S_AXI_BASEADDR,
+   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN1_S_AXI_BASEADDR,
+   			   (Xuint32 *)XPAR_AXI_BRAM_MEAN2_S_AXI_BASEADDR,
+   			   (Xuint32 *)XPAR_AXI_BRAM_VARSUM_S_AXI_BASEADDR,
+   			   (Xuint32 *)XPAR_AXI_BRAM_WEIGHT_S_AXI_BASEADDR
+   	   };
+
+   	   srcfrm = (Xuint32 *) pDemo->vdmacfg_hdmi_write.FrameStoreStartAddr[rx_prev_frm];
+   	   dstfrm = ((Xuint32 *) pDemo->vdmacfg_hdmi_read.FrameStoreStartAddr[tx_curr_park]) + FGBG_WIDTH;
+   	   const int ntiles = FGBG_WIDTH*FGBG_HEIGHT/FGBG_TILE;
+   	   int t;
+   	   x = 0; y = 0;
+   	   //xil_printf("  Start: ctx_data=0x%x, ntiles=%d\n\r", ctx_data, ntiles);
+
+   	   double ms_tile_copyin = 0, ms_tile_acc = 0, ms_tile_copyout = 0;
+
+   	   for (t = 0; t < ntiles; ++t) {
+   		   // copy ctx data to hw
+   		   Xuint32 *ctx_data1 = ctx_data;
+   		   int c, i;
+   		   double _ms_start = TimerElapsedMs(&timer);
+#if CDMA_USE_SG
+   		   wcopy_open_begin(FGBG_NCTXBRAMS+8);
+#endif
+#if 1
+   		   for (c = 0; c < FGBG_NCTXBRAMS; ++c) {
+   			   wcopy(brams_ctx[c], ctx_data1, FGBG_TILE*FGBG_MODELS);
+   			   ctx_data1 += FGBG_TILE*FGBG_MODELS;
+   		   }
+#endif
+   		   // copy pixel data to hw
+   		   int x1 = x, y1 = y;
+   		   i = 0;
+   		   while (i < FGBG_TILE) {
+   			   int lrest = min(FGBG_WIDTH - x1, FGBG_TILE - i);
+   			   if (lrest == 0) {
+   				   // next line
+   				   x1 = 0;
+   				   ++y1;
+   				   srcfrm += pDemo->hdmii_width;
+   			   } else {
+   				   // copy lrest pixels
+   				   //xil_printf("  pix2hw: wcopy i=%d, x1=%d, lrest=%d\n\r", i, x1, lrest);
+   				   wcopy(bram_frame+i, srcfrm+x1, lrest);
+   				   i += lrest;
+   				   x1 += lrest;
+   			   }
+   		   }
+
+   		   wcopy_barrier(); 		// sg-dma: wait for previous (copyout) done
+#if CDMA_USE_SG
+   		   wcopy_close_submit();	// copy-in
+#endif
+   		   wcopy_barrier();
+
+   		   ms_tile_copyin += TimerElapsedMs(&timer) - _ms_start;
+#if 1
+   		   _ms_start = TimerElapsedMs(&timer);
+   	   	   //Xil_DCacheFlush();
+   		   // run accelerator
+   		   XMog_algorithm_block_SetWidth(&mog, FGBG_TILE);
+   		   XMog_algorithm_block_SetC_alpha(&mog, AsU32(c_alpha));
+   		   XMog_algorithm_block_SetC_vinit(&mog, AsU32(c_vinit));
+   		   XMog_algorithm_block_SetC_varth(&mog, AsU32(c_varth));
+   		   XMog_algorithm_block_SetC_winit(&mog, AsU32(c_winit));
+   		   XMog_algorithm_block_SetC_bgth(&mog,  AsU32(c_bgth));
+   		   XMog_algorithm_block_SetFlags(&mog,   1); 		// 2 = fg in orig pixels, bg in black; 1 = fg white, bg black.
+
+   		   if (!XMog_algorithm_block_IsReady(&mog)) {
+   			   xil_printf("ERROR: FGBG-MOG is not ready!\n\r");
+   		   }
+   		   XMog_algorithm_block_Start(&mog);
+
+
+   		   ms_tile_acc += TimerElapsedMs(&timer) - _ms_start;
+#endif
+   		   _ms_start = TimerElapsedMs(&timer);
+#if CDMA_USE_SG
+   		   wcopy_open_begin(FGBG_HEIGHT);
+#endif
+#if 1
+   		   // copy ctx data out of hw
+   		   for (c = 0; c < FGBG_NCTXBRAMS; ++c) {
+   			   wcopy(ctx_data, brams_ctx[c], FGBG_TILE*FGBG_MODELS);
+   			   ctx_data += FGBG_TILE*FGBG_MODELS;
+   		   }
+#endif
+#if 1
+   		  // copy pixel data from hw
+   		   i = 0;
+		   while (i < FGBG_TILE) {
+			   int lrest = min(FGBG_WIDTH - x, FGBG_TILE - i);
+			   if (lrest == 0) {
+				   // next line
+				   x = 0;
+				   ++y;
+				   dstfrm += pDemo->hdmio_width;
+			   } else {
+				   // copy lrest pixels
+				   //xil_printf("  pix2hw: wcopy i=%d, x1=%d, lrest=%d\n\r", i, x1, lrest);
+				   wcopy(dstfrm+x, bram_outmask+i, lrest);
+				   i += lrest;
+				   x += lrest;
+			   }
+		   }
+#endif
+   		   while (!XMog_algorithm_block_IsReady(&mog))
+   			   ; //waiting
+
+#if CDMA_USE_SG
+		   wcopy_close_submit();	// copyout
+#endif
+		   //wcopy_barrier(); 		// sg-dma
+		   ms_tile_copyout += TimerElapsedMs(&timer) - _ms_start;
+   	   }
+
+       wcopy_barrier();
+
+//       XScuTimer_Stop(&timer);
+
+       double ms = TimerElapsedMs(&timer);
+       printf("  Time: newframe %g ms, copyorig %g ms, copyin %g ms, acc %g ms, copyout %g ms\n\r",
+    		   ms_newframe, ms_copyorig, ms_tile_copyin, ms_tile_acc, ms_tile_copyout);
+   	   printf("  Fin: ctx_data=0x%x, x=%d, y=%d, cdma irqs %d, Total time %g ms, FPS=%g\n\r",
+   			   ctx_data, x, y, cdma_irq_count, ms, 1000.0/ms);
+
+   	   //Xil_DCacheFlush();
+//   	   sleep(1);
+
+ */
+   }
+
+   //===============================================motion detection part end==================================================================
+
+#if 0
+   {
+   // Clear frame stores (TX)
+      Xuint32 i;
+      Xuint32 storage_size = pDemo->uNumFrames_HdmiFrameBuffer * ((1920*1080)<<2);
+      volatile Xuint32 *pStorageMem = (Xuint32 *)pDemo->uBaseAddr_MEM_HdmiFrameBuffer;
+      for ( i = 0; i < storage_size; i += 4 )
+      {
+         // Black Pixel
+   	  // *pStorageMem++ = 0x0080; // Y (luma) [hi], UV [lo]
+         //*pStorageMem++ = 0x80; // CbCr (chroma)
+         //*pStorageMem++ = 0x00; // Y (luma)
+   	   // 0-R-B-G
+   	   *pStorageMem++ = i*4;
+      }
+   }
+#endif
+
+
+
+   sleep(1);
+  }
+
+   return 0;
+}
+

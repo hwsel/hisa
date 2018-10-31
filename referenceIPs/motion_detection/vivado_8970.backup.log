@@ -1,0 +1,1175 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:26:55 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Fri Nov 29 15:35:19 2013
+# Process ID: 21273
+# Log file: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/vivado.log
+# Journal file: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Device 21-36] Loading parts and site information from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [/mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+open_project /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.xpr
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/constrs_1/new/zc702_pins.xdc: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/designprops.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/usercols.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml'.
+Scanning sources...
+Finished scanning sources
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/home/jara/hdl/HLS/fgbg_hls1/vivado_ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/mnt/extra/jara/Xilinx/Vivado/2013.3/data/ip'.
+open_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 4632.414 ; gain = 173.098
+open_bd_design {/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd}
+Adding component instance block -- xilinx.com:ip:xlconstant:1.0 - const_Vcc
+Adding component instance block -- xilinx.com:ip:xlconstant:1.0 - const_Gnd
+Adding component instance block -- xilinx.com:ip:v_vid_in_axi4s:3.0 - v_vid_in_axi4s_1
+Adding component instance block -- xilinx.com:ip:axi_iic:2.0 - axi_iic_1
+Adding component instance block -- xilinx.com:ip:processing_system7:5.3 - processing_system7_1
+Adding component instance block -- xilinx.com:ip:v_tc:6.0 - v_tc_2
+Adding component instance block -- xilinx.com:ip:v_axi4s_vid_out:3.0 - v_axi4s_vid_out_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_100M
+Adding component instance block -- xilinx.com:ip:v_tc:6.0 - v_tc_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:5.1 - clk_axivid
+Adding component instance block -- xilinx.com:ip:axi_vdma:6.1 - axi_vdma_0
+Adding component instance block -- xilinx.com:ip:util_vector_logic:1.0 - pos_reset
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_150M
+Adding component instance block -- xilinx.com:user:bitcrop:1.0 - bitcrop_24to32
+Adding component instance block -- xilinx.com:user:bitcrop:1.0 - bitcrop_32to24
+Adding component instance block -- utia.cz:user:fmc_imageon_hdmi_in:3.2 - fmc_imageon_hdmi_in_0
+Adding component instance block -- utia.cz:user:fmc_imageon_hdmi_out:3.2 - fmc_imageon_hdmi_out_0
+Adding component instance block -- utia.cz:user:v_yuv422to444:1.0 - v_yuv422to444_0
+Adding component instance block -- jsykora.info:user:v_yuv444to422:1.0 - v_yuv444to422_0
+Adding component instance block -- xilinx.com:ip:v_ycrcb2rgb:7.1 - v_ycrcb2rgb_0
+Adding component instance block -- xilinx.com:ip:v_rgb2ycrcb:7.1 - v_rgb2ycrcb_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_1
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_2
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_3
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_4
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_5
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_outmask
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_weight
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean1
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean2
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_varsum
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_frame
+Adding component instance block -- xilinx.com:hls:mog_algorithm_block:1.4.1 - mog_algorithm_block_0
+Adding component instance block -- xilinx.com:ip:axi_cdma:4.1 - axi_cdma_0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_aux
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - blk_mem_gen_0
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s01_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us_df
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <Zynq_Design> from BD file </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd>
+open_bd_design: Time (s): cpu = 00:01:01 ; elapsed = 00:00:51 . Memory (MB): peak = 4810.914 ; gain = 160.453
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mog_algorithm_block:1.4.1 mog_algorithm_block_1
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_1/M_AXI_GP0" }  [get_bd_intf_pins mog_algorithm_block_1/S_AXI_HLS_FGBG_PERIPH_BUS]
+</mog_algorithm_block_1/S_AXI_HLS_FGBG_PERIPH_BUS/Reg> is being mapped into </processing_system7_1/Data> at <0x43C50000[ 64K ]>
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_outmask_PORTA]
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_weight_PORTA]
+set_property location {10 5059 2316} [get_bd_cells mog_algorithm_block_1_bram_0]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_0_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_1_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_2_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_varsum_PORTA]
+set_property location {10 5066 2555} [get_bd_cells mog_algorithm_block_1_bram]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_frame_PORTA]
+set_property location {9 4624 2598} [get_bd_cells mog_algorithm_block_1]
+set_property location {9 4624 2485} [get_bd_cells mog_algorithm_block_1]
+set_property location {12 5817 2408} [get_bd_cells mog_algorithm_block_1_bram]
+set_property location {12 5825 2498} [get_bd_cells mog_algorithm_block_1_bram_0]
+set_property location {12 5802 2645} [get_bd_cells mog_algorithm_block_1_bram_1]
+set_property location {12 5770 2726} [get_bd_cells mog_algorithm_block_1_bram_2]
+set_property location {12 5776 2822} [get_bd_cells mog_algorithm_block_1_bram_3]
+set_property location {12 5764 2924} [get_bd_cells mog_algorithm_block_1_bram_4]
+set_property location {12 5764 3018} [get_bd_cells mog_algorithm_block_1_bram_5]
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_8: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {2048} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5404 2367} [get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.FAULT_INJECT = 0
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram_ctrl_0]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+set_property name axi_bram_outmask1 [ get_bd_cells axi_bram_ctrl_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_outmask1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5364 2591} [get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_0]
+endgroup
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0_1: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0_1: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_0_bram_0_1: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_0_9: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram_0]
+endgroup
+set_property name axi_bram_weight1 [ get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram_weight1]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_weight1]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/vivado_pid21273.debug)
+connect_bd_intf_net [get_bd_intf_pins axi_bram_weight1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_0/BRAM_PORTB]
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5420 2742} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean0 [ get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_weight [ get_bd_cells axi_bram_weight1]
+set_property name axi_bram1_outmask [ get_bd_cells axi_bram_outmask1]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean0]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_1_10: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_1_10: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_1_10: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_1_10: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean0/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_1/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {12 5588 2891} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean1 [ get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean1]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean1]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_2_11: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_2_11: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_2_11: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_2_11: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_2]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_2/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {12 5617 3049} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean2 [ get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean2]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean2]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_4_13: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_4_13: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_4_13: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_4_13: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_4]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean2/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_4/BRAM_PORTB]
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_3_12: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_3_12: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_3_12: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_3_12: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_3]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_bram1_mean2_bram_porta]
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean2/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_3/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property name axi_bram1_varsum [ get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_varsum]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_varsum]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_varsum/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_4/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property name axi_bram1_frame [ get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_5]
+endgroup
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+INFO: [xilinx.com:ip:blk_mem_gen:8.0-9001] Zynq_Design_mog_algorithm_block_1_bram_5_14: update_gui_for_PARAM_VALUE.WRITE_WIDTH_B
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {2048} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram_5]
+endgroup
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.FAULT_INJECT = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_frame]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_frame]
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.SINGLE_PORT_BRAM = 1
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.DATA_WIDTH = 64
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.MEM_DEPTH = 8192
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.USE_ECC = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.ECC_ONOFF_RESET_VALUE = 0
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.FAULT_INJECT = 0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_frame/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_5/BRAM_PORTB]
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property name axi_mem_intercon5 [ get_bd_cells axi_interconnect_0]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2} CONFIG.NUM_MI {7}] [get_bd_cells axi_mem_intercon5]
+0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M00_AXI] [get_bd_intf_pins axi_bram1_outmask/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M01_AXI] [get_bd_intf_pins axi_bram1_weight/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M02_AXI] [get_bd_intf_pins axi_bram1_mean0/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M03_AXI] [get_bd_intf_pins axi_bram1_mean1/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M04_AXI] [get_bd_intf_pins axi_bram1_mean2/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M05_AXI] [get_bd_intf_pins axi_bram1_varsum/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M06_AXI] [get_bd_intf_pins axi_bram1_frame/S_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_outmask/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_outmask/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_weight/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_weight/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean0/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean1/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean2/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_varsum/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_frame/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean0/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean1/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean2/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_varsum/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_frame/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon5/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/S01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M02_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M03_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M04_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M05_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M06_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/S01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M02_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M03_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M04_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M05_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M06_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property location {6 2960 2221} [get_bd_cells axi_interconnect_0]
+delete_bd_objs [get_bd_intf_nets processing_system7_1_m_axi_gp1]
+connect_bd_intf_net [get_bd_intf_pins processing_system7_1/M_AXI_GP1] [get_bd_intf_pins axi_interconnect_0/S00_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins axi_mem_intercon2/S00_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins axi_mem_intercon5/S00_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+set_property name axi_mem_intercon6 [ get_bd_cells axi_interconnect_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property name axi_mem_intercon7 [ get_bd_cells axi_interconnect_0]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP3 {1}] [get_bd_cells processing_system7_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins processing_system7_1/S_AXI_HP3] [get_bd_intf_pins axi_mem_intercon7/M00_AXI]
+startgroup
+set_property -dict [list CONFIG.XBAR_DATA_WIDTH.VALUE_SRC USER] [get_bd_cells axi_mem_intercon5]
+delete_bd_objs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5272.504 ; gain = 0.000
+0
+set_property -dict [list CONFIG.ENABLE_ADVANCED_OPTIONS {1} CONFIG.XBAR_DATA_WIDTH {64}] [get_bd_cells axi_mem_intercon5]
+delete_bd_objs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 5272.504 ; gain = 0.000
+delete_bd_objs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5272.504 ; gain = 0.000
+0
+endgroup
+startgroup
+set_property -dict [list CONFIG.XBAR_DATA_WIDTH.VALUE_SRC USER] [get_bd_cells axi_mem_intercon7]
+0
+set_property -dict [list CONFIG.STRATEGY {2} CONFIG.ENABLE_ADVANCED_OPTIONS {1} CONFIG.XBAR_DATA_WIDTH {64}] [get_bd_cells axi_mem_intercon7]
+0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon7/M01_AXI] [get_bd_intf_pins axi_mem_intercon5/S01_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon7/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon7/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+disconnect_bd_net /proc_sys_reset_interconnect_aresetn [get_bd_pins axi_mem_intercon7/S00_ARESETN]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_cdma:4.1 axi_cdma_1
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_M_AXI_DATA_WIDTH {64} CONFIG.C_M_AXI_MAX_BURST_LEN {32} CONFIG.C_INCLUDE_DRE {1}] [get_bd_cells axi_cdma_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_1/M_AXI] [get_bd_intf_pins axi_mem_intercon7/S00_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins processing_system7_1/S_AXI_HP3_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2}] [get_bd_cells axi_acpmem_intercon3]
+0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_1/M_AXI_SG] [get_bd_intf_pins axi_acpmem_intercon3/S01_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_acpmem_intercon3/S01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_acpmem_intercon3/S01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_1/M_AXI_GP0" }  [get_bd_intf_pins axi_cdma_1/S_AXI_LITE]
+</axi_cdma_1/S_AXI_LITE/Reg> is being mapped into </processing_system7_1/Data> at <0x7E210000[ 64K ]>
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_cdma_1/m_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+set_property CONFIG.PCW_NUM_F2P_INTR_INPUTS 4 [get_bd_cells processing_system7_1]
+delete_bd_objs [get_bd_nets axi_cdma_0_cdma_introut]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:1.0 util_vector_logic_0
+endgroup
+delete_bd_objs [get_bd_cells util_vector_logic_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_reduced_logic:1.0 util_reduced_logic_0
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_SIZE {4} CONFIG.C_OPERATION {or}] [get_bd_cells util_reduced_logic_0]
+endgroup
+delete_bd_objs [get_bd_cells util_reduced_logic_0]
+connect_bd_net [get_bd_pins axi_cdma_0/cdma_introut] [get_bd_pins processing_system7_1/IRQ_F2P]
+delete_bd_objs [get_bd_nets axi_cdma_0_cdma_introut]
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.0 axi_intc_0
+endgroup
+connect_bd_net [get_bd_pins axi_cdma_1/cdma_introut] [get_bd_pins axi_intc_0/intr]
+set_property -dict [list CONFIG.PortWidth {2}] [get_bd_pins axi_intc_0/intr]
+CRITICAL WARNING: [BD 41-737] Cannot set the parameter PortWidth on /axi_intc_0/intr. It is read-only.
+delete_bd_objs [get_bd_nets axi_cdma_1_cdma_introut]
+delete_bd_objs [get_bd_cells axi_intc_0]
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+assign_bd_address
+INFO: [BD 41-1051] The usage <register> of peripheral </processing_system7_1/S_AXI_ACP/ACP_IOP> does not match usage <memory> of master </axi_cdma_1/Data_SG> and will not be auto assigned
+INFO: [BD 41-731] Override this restriction by assigning the peripheral manually. Drag it over the target address space in the GUI, or see assign_bd_address -help.
+</processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM> is being mapped into </axi_cdma_1/Data_SG> at <0x00000000[ 1G ]>
+</processing_system7_1/S_AXI_ACP/ACP_QSPI_LINEAR> is being mapped into </axi_cdma_1/Data_SG> at <0xFC000000[ 16M ]>
+</processing_system7_1/S_AXI_HP3/HP3_DDR_LOWOCM> is being mapped into </axi_cdma_1/Data> at <0x00000000[ 1G ]>
+</axi_bram1_frame/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80000000[ 8K ]>
+</axi_bram1_frame/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x80000000[ 8K ]>
+</axi_bram1_mean0/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80002000[ 8K ]>
+</axi_bram1_mean0/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x80002000[ 8K ]>
+</axi_bram1_mean1/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80004000[ 8K ]>
+</axi_bram1_mean1/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x80004000[ 8K ]>
+</axi_bram1_mean2/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80006000[ 8K ]>
+</axi_bram1_mean2/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x80006000[ 8K ]>
+</axi_bram1_outmask/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80008000[ 8K ]>
+</axi_bram1_outmask/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x80008000[ 8K ]>
+</axi_bram1_varsum/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x8000A000[ 8K ]>
+</axi_bram1_varsum/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x8000A000[ 8K ]>
+</axi_bram1_weight/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x8000C000[ 8K ]>
+</axi_bram1_weight/S_AXI/Mem0> is being mapped into </axi_cdma_1/Data> at <0x8000C000[ 8K ]>
+</axi_bram_aux/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x8000E000[ 8K ]>
+</axi_bram_aux/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x8000E000[ 8K ]>
+</axi_bram_frame/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80010000[ 8K ]>
+</axi_bram_frame/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x80010000[ 8K ]>
+</axi_bram_mean0/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80012000[ 8K ]>
+</axi_bram_mean0/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x80012000[ 8K ]>
+</axi_bram_mean1/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80014000[ 8K ]>
+</axi_bram_mean1/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x80014000[ 8K ]>
+</axi_bram_mean2/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80016000[ 8K ]>
+</axi_bram_mean2/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x80016000[ 8K ]>
+</axi_bram_outmask/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x80018000[ 8K ]>
+</axi_bram_outmask/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x80018000[ 8K ]>
+</axi_bram_varsum/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x8001A000[ 8K ]>
+</axi_bram_varsum/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x8001A000[ 8K ]>
+</axi_bram_weight/S_AXI/Mem0> is being mapped into </processing_system7_1/Data> at <0x8001C000[ 8K ]>
+</axi_bram_weight/S_AXI/Mem0> is being mapped into </axi_cdma_0/Data> at <0x8001C000[ 8K ]>
+assign_bd_address [get_bd_addr_segs {processing_system7_1/S_AXI_ACP/ACP_IOP }]
+</processing_system7_1/S_AXI_ACP/ACP_IOP> is being mapped into </axi_cdma_1/Data_SG> at <0xE0000000[ 4M ]>
+set_property range 4K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80020000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80200000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80202000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x80204000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80206000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80208000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x8020A000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x8020C000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property offset 0x80210000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x8022000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+ERROR: [BD 41-70] Exec TCL: proposed address <0x08022000[ 8K ]> is not within the range limit <0x80000000[ 1G ]> for this segment
+
+ERROR: [Common 17-39] 'set_property' failed due to earlier errors.
+set_property offset 0x80220000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80230000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80240000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x80250000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80260000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 8K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80100000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_frame_Mem0}]
+set_property offset 0x80110000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean0_Mem0}]
+set_property offset 0x80120000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean1_Mem0}]
+set_property offset 0x80130000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean2_Mem0}]
+set_property offset 0x80140000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_outmask_Mem0}]
+set_property offset 0x80150000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_varsum_Mem0}]
+set_property offset 0x80160000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80000000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+CRITICAL WARNING: [BD 41-1294] proposed address <0x80100000[ 8K ]> conflicts with peripheral </axi_bram_frame/S_AXI/Mem0> mapped into segment </processing_system7_1/Data/SEG_axi_bram_frame_Mem0> at <0x80100000[ 8K ]>
+set_property offset 0x80100000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+CRITICAL WARNING: [BD 41-1292] proposed address <0x80100000[ 8K ]> conflicts with peripheral </axi_bram_frame/S_AXI/Mem0> mapped into segment </processing_system7_1/Data/SEG_axi_bram_frame_Mem0> at <0x80100000[ 8K ]>. This must be resolved in order to pass validation
+set_property offset 0x80170000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80170000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_aux_Mem0}]
+set_property offset 0x80100000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_frame_Mem0}]
+set_property offset 0x80110000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean0_Mem0}]
+set_property offset 0x80120000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean1_Mem0}]
+set_property offset 0x80130000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean2_Mem0}]
+set_property offset 0x80140000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_outmask_Mem0}]
+set_property offset 0x80150000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_varsum_Mem0}]
+set_property offset 0x80160000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80200000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80210000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x80220000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80230000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80240000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x80250000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80260000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_weight_Mem0}]
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+validate_bd_design
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_7: value of PARAM_VALUE.MEM_DEPTH = 1024
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_8: value of PARAM_VALUE.MEM_DEPTH = 1024
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_9: value of PARAM_VALUE.MEM_DEPTH = 2048
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_10: value of PARAM_VALUE.MEM_DEPTH = 2048
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_11: value of PARAM_VALUE.MEM_DEPTH = 2048
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_12: value of PARAM_VALUE.MEM_DEPTH = 2048
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_13: value of PARAM_VALUE.MEM_DEPTH = 2048
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Zynq_Design_axi_bram_ctrl_0_14: value of PARAM_VALUE.MEM_DEPTH = 1024
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_HP1/HP1_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP0/HP0_DDR_LOWOCM> are of different types but mapped into related masters </axi_vdma_0/Data_S2MM> and </axi_vdma_0/Data_MM2S> at the same offset
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP2/HP2_DDR_LOWOCM> are of different types but mapped into related masters </axi_cdma_0/Data_SG> and </axi_cdma_0/Data> at the same offset
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP3/HP3_DDR_LOWOCM> are of different types but mapped into related masters </axi_cdma_1/Data_SG> and </axi_cdma_1/Data> at the same offset
+INFO: [xilinx.com:ip:axi_vdma:6.1-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /bitcrop_32to24/S_AXI(0) and /axi_vdma_0/M_AXIS_MM2S(1)
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /axi_vdma_0/S_AXIS_S2MM(1) and /bitcrop_24to32/M_AXI(0)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram/BRAM_PORTB(OTHERS) and /axi_bram_outmask/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_0/BRAM_PORTB(OTHERS) and /axi_bram_weight/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_1/BRAM_PORTB(OTHERS) and /axi_bram_mean0/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_2/BRAM_PORTB(OTHERS) and /axi_bram_mean1/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_3/BRAM_PORTB(OTHERS) and /axi_bram_mean2/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_4/BRAM_PORTB(OTHERS) and /axi_bram_varsum/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_5/BRAM_PORTB(OTHERS) and /axi_bram_frame/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_outmask_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_0/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_weight_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_1/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_0_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_2/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_1_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_3/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_2_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_4/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_varsum_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_5/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_frame_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_outmask_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_0/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_weight_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_1/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_0_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_2/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_1_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_3/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_2_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_4/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_varsum_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_5/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_frame_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram/BRAM_PORTB(OTHERS) and /axi_bram1_outmask/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_0/BRAM_PORTB(OTHERS) and /axi_bram1_weight/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_1/BRAM_PORTB(OTHERS) and /axi_bram1_mean0/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_2/BRAM_PORTB(OTHERS) and /axi_bram1_mean1/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_3/BRAM_PORTB(OTHERS) and /axi_bram1_mean2/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_4/BRAM_PORTB(OTHERS) and /axi_bram1_varsum/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_5/BRAM_PORTB(OTHERS) and /axi_bram1_frame/BRAM_PORTA(BRAM_CTRL)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /processing_system7_1/S_AXI_HP0(8) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP0(6) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_1/S_AXI_HP0(READ_WRITE) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /processing_system7_1/S_AXI_HP1(8) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP1(6) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_1/S_AXI_HP1(READ_WRITE) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon2/xbar/S00_AXI(1) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon2/xbar/S00_AXI(1) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon2/xbar/S00_AXI(256) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon2/xbar/S01_AXI(1) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon2/xbar/S01_AXI(1) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon2/xbar/S01_AXI(256) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon4/xbar/S00_AXI(1) and /axi_mem_intercon4/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon4/xbar/S00_AXI(256) and /axi_mem_intercon4/s00_couplers/s00_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP2(6) and /axi_mem_intercon4/m00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_acpmem_intercon3/xbar/S00_AXI(1) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_acpmem_intercon3/xbar/S00_AXI(1) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_acpmem_intercon3/xbar/S00_AXI(256) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_acpmem_intercon3/xbar/S01_AXI(1) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_acpmem_intercon3/xbar/S01_AXI(1) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_acpmem_intercon3/xbar/S01_AXI(256) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_ACP(3) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon5/xbar/S00_AXI(1) and /axi_mem_intercon6/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon5/xbar/S00_AXI(1) and /axi_mem_intercon6/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon5/xbar/S00_AXI(256) and /axi_mem_intercon6/xbar/M01_AXI(8)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon6/xbar/S00_AXI(1) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /axi_mem_intercon6/xbar/S00_AXI(2) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_mem_intercon6/xbar/S00_AXI(2) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon6/xbar/S00_AXI(256) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon5/xbar/S01_AXI(1) and /axi_mem_intercon7/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon5/xbar/S01_AXI(1) and /axi_mem_intercon7/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon5/xbar/S01_AXI(256) and /axi_mem_intercon7/xbar/M01_AXI(32)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon7/xbar/S00_AXI(1) and /axi_mem_intercon7/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon7/xbar/S00_AXI(256) and /axi_mem_intercon7/s00_couplers/s00_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP3(6) and /axi_mem_intercon7/m00_couplers/auto_pc/M_AXI(0)
+validate_bd_design: Time (s): cpu = 00:01:02 ; elapsed = 00:00:45 . Memory (MB): peak = 5272.504 ; gain = 0.000
+success
+save_bd_design
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+set_property is_enabled false [get_files  /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/constrs_fmc2/new/chipscope.xdc]
+reset_run impl_1
+reset_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 5272.504 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream
+[Fri Nov 29 16:33:01 2013] Launched impl_1...
+Run output will be captured here: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 5272.504 ; gain = 0.000
+reset_run impl_1 -noclean_dir
+reset_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5272.504 ; gain = 0.000
+reset_run synth_1
+reset_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 5272.504 ; gain = 0.000
+reset_target all [get_files  /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd]
+reset_target: Time (s): cpu = 00:00:41 ; elapsed = 00:00:35 . Memory (MB): peak = 5272.504 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite parameter (C_M_AXI_S2MM_DATA_WIDTH) on /axi_vdma_0 that is set by user. Command ignored
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_HP1/HP1_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP0/HP0_DDR_LOWOCM> are of different types but mapped into related masters </axi_vdma_0/Data_S2MM> and </axi_vdma_0/Data_MM2S> at the same offset
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP2/HP2_DDR_LOWOCM> are of different types but mapped into related masters </axi_cdma_0/Data_SG> and </axi_cdma_0/Data> at the same offset
+CRITICAL WARNING: [BD 41-1265] </processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM> and </processing_system7_1/S_AXI_HP3/HP3_DDR_LOWOCM> are of different types but mapped into related masters </axi_cdma_1/Data_SG> and </axi_cdma_1/Data> at the same offset
+INFO: [xilinx.com:ip:axi_vdma:6.1-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /bitcrop_32to24/S_AXI(0) and /axi_vdma_0/M_AXIS_MM2S(1)
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /axi_vdma_0/S_AXIS_S2MM(1) and /bitcrop_24to32/M_AXI(0)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram/BRAM_PORTB(OTHERS) and /axi_bram_outmask/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_0/BRAM_PORTB(OTHERS) and /axi_bram_weight/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_1/BRAM_PORTB(OTHERS) and /axi_bram_mean0/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_2/BRAM_PORTB(OTHERS) and /axi_bram_mean1/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_3/BRAM_PORTB(OTHERS) and /axi_bram_mean2/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_4/BRAM_PORTB(OTHERS) and /axi_bram_varsum/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_5/BRAM_PORTB(OTHERS) and /axi_bram_frame/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_outmask_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_0/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_weight_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_1/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_0_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_2/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_1_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_3/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_mean_2_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_4/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_models_varsum_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_0_bram_5/BRAM_PORTA(OTHERS) and /mog_algorithm_block_0/ptr_frame_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_outmask_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_0/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_weight_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_1/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_0_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_2/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_1_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_3/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_mean_2_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_4/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_models_varsum_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_5/BRAM_PORTA(OTHERS) and /mog_algorithm_block_1/ptr_frame_PORTA(OTHER)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram/BRAM_PORTB(OTHERS) and /axi_bram1_outmask/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_0/BRAM_PORTB(OTHERS) and /axi_bram1_weight/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_1/BRAM_PORTB(OTHERS) and /axi_bram1_mean0/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_2/BRAM_PORTB(OTHERS) and /axi_bram1_mean1/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_3/BRAM_PORTB(OTHERS) and /axi_bram1_mean2/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_4/BRAM_PORTB(OTHERS) and /axi_bram1_varsum/BRAM_PORTA(BRAM_CTRL)
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /mog_algorithm_block_1_bram_5/BRAM_PORTB(OTHERS) and /axi_bram1_frame/BRAM_PORTA(BRAM_CTRL)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /processing_system7_1/S_AXI_HP0(8) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP0(6) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_1/S_AXI_HP0(READ_WRITE) and /axi_mem_intercon0/s00_couplers/s00_data_fifo/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /processing_system7_1/S_AXI_HP1(8) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP1(6) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_1/S_AXI_HP1(READ_WRITE) and /axi_mem_intercon1/s00_couplers/auto_pc/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon2/xbar/S00_AXI(1) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon2/xbar/S00_AXI(1) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon2/xbar/S00_AXI(256) and /axi_mem_intercon2/s00_couplers/s00_data_fifo/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon2/xbar/S01_AXI(1) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon2/xbar/S01_AXI(1) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon2/xbar/S01_AXI(256) and /axi_mem_intercon2/s01_couplers/s01_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon4/xbar/S00_AXI(1) and /axi_mem_intercon4/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon4/xbar/S00_AXI(256) and /axi_mem_intercon4/s00_couplers/s00_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP2(6) and /axi_mem_intercon4/m00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_acpmem_intercon3/xbar/S00_AXI(1) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_acpmem_intercon3/xbar/S00_AXI(1) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_acpmem_intercon3/xbar/S00_AXI(256) and /axi_acpmem_intercon3/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_acpmem_intercon3/xbar/S01_AXI(1) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_acpmem_intercon3/xbar/S01_AXI(1) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_acpmem_intercon3/xbar/S01_AXI(256) and /axi_acpmem_intercon3/s01_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_ACP(3) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_acpmem_intercon3/m00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon5/xbar/S00_AXI(1) and /axi_mem_intercon6/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon5/xbar/S00_AXI(1) and /axi_mem_intercon6/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon5/xbar/S00_AXI(256) and /axi_mem_intercon6/xbar/M01_AXI(8)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon6/xbar/S00_AXI(1) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /axi_mem_intercon6/xbar/S00_AXI(2) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_mem_intercon6/xbar/S00_AXI(2) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon6/xbar/S00_AXI(256) and /axi_mem_intercon6/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_mem_intercon5/xbar/S01_AXI(1) and /axi_mem_intercon7/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon5/xbar/S01_AXI(1) and /axi_mem_intercon7/xbar/M01_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon5/xbar/S01_AXI(256) and /axi_mem_intercon7/xbar/M01_AXI(32)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon7/xbar/S00_AXI(1) and /axi_mem_intercon7/s00_couplers/s00_data_fifo/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon7/xbar/S00_AXI(256) and /axi_mem_intercon7/s00_couplers/s00_data_fifo/M_AXI(32)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_HP3(6) and /axi_mem_intercon7/m00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram/addrb'(32) to net 'axi_bram_ctrl_0_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_0/addrb'(32) to net 'axi_bram_ctrl_1_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_1/addrb'(32) to net 'axi_bram_ctrl_2_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_2/addrb'(32) to net 'axi_bram_ctrl_3_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_3/addrb'(32) to net 'axi_bram_ctrl_4_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_4/addrb'(32) to net 'axi_bram_ctrl_5_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_0_bram_5/addrb'(32) to net 'axi_bram_ctrl_6_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_aux_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_aux_bram_portb_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_1/S_AXI_ACP_ARID'(3) to net 'axi_interconnect_0_m00_axi2_ARID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_1/S_AXI_ACP_WID'(3) to net 'axi_interconnect_0_m00_axi2_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_acpmem_intercon3/M00_AXI_bid'(1) to net 'axi_interconnect_0_m00_axi2_BID'(3) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_1/S_AXI_ACP_AWID'(3) to net 'axi_interconnect_0_m00_axi2_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_acpmem_intercon3/M00_AXI_rid'(1) to net 'axi_interconnect_0_m00_axi2_RID'(3) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram/addrb'(32) to net 'axi_bram_outmask1_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_0/addrb'(32) to net 'axi_bram_weight1_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_1/addrb'(32) to net 'axi_bram1_mean0_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_2/addrb'(32) to net 'axi_bram1_mean1_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_3/addrb'(32) to net 'axi_bram1_mean2_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_4/addrb'(32) to net 'axi_bram1_varsum_bram_porta_ADDR'(14) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/mog_algorithm_block_1_bram_5/addrb'(32) to net 'axi_bram1_frame_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : Zynq_Design.vhd
+VHDL Output written to : Zynq_Design_wrapper.vhd
+Wrote  : </home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd> 
+Delivering 'Vivado Synthesis' files for IP 'Zynq_Design_processing_system7_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_xlconstant_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /const_Vcc .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_iic_1_0'.
+Delivering 'Implementation' files for IP 'Zynq_Design_axi_iic_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_iic_1 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_proc_sys_reset_0'.
+Delivering 'Implementation' files for IP 'Zynq_Design_proc_sys_reset_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_100M .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_xlconstant_1_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /const_Gnd .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_clk_wiz_1_0'.
+Delivering 'Implementation' files for IP 'Zynq_Design_clk_wiz_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /clk_axivid .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_fmc_imageon_hdmi_out_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /fmc_imageon_hdmi_out_0 .
+Delivering 'Synthesis' files for IP 'Zynq_Design_v_tc_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_tc_1 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_fmc_imageon_hdmi_in_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /fmc_imageon_hdmi_in_0 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_v_vid_in_axi4s_1_0' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_v_vid_in_axi4s_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_vid_in_axi4s_1 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_v_axi4s_vid_out_1_0' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Source Delivery' files for IP 'Zynq_Design_v_axi4s_vid_out_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_axi4s_vid_out_1 .
+Delivering 'Synthesis' files for IP 'Zynq_Design_v_tc_2_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_tc_2 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_0' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1_axi_periph/xbar .
+Delivering 'Synthesis' files for IP 'Zynq_Design_axi_vdma_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_vdma_0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_util_vector_logic_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /pos_reset .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_proc_sys_reset_0_1'.
+Delivering 'Implementation' files for IP 'Zynq_Design_proc_sys_reset_0_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_150M .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_bitcrop_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /bitcrop_24to32 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_bitcrop_0_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /bitcrop_32to24 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_v_yuv422to444_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_yuv422to444_0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_v_yuv444to422_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_yuv444to422_0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_v_ycrcb2rgb_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_ycrcb2rgb_0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_v_rgb2ycrcb_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_rgb2ycrcb_0 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_mog_algorithm_block_0_0' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:floating_point:7.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_utils:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:axi_utils:2.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_pipe:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_wrapper:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_addsub:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:mult_gen:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_bram18k:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+WARNING: [IP_Flow 19-519] Language mismatch detected between 'VHDL Synthesis Wrapper' and 'Verilog Synthesis' output products. Please check with the IP provider to see if this is expected.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_0_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_0 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_1_2'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_1 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_2_3'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_2 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_3_4'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_3 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_4_5'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_4 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_0_bram_5_6'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0_bram_5 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_outmask .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_1' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_1'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon2/xbar .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_1_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_weight .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_2_2'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_mean0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_3_3'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_mean1 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_4_4'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_mean2 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_5_5'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_varsum .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_6_6'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_frame .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Zynq_Design_axi_cdma_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_cdma_0 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_3' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_3'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon4/xbar .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_7'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_aux .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_blk_mem_gen_0_7'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /blk_mem_gen_0 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_mog_algorithm_block_1_1' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_1'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:floating_point:7.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_utils:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:axi_utils:2.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_pipe:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_wrapper:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_addsub:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:mult_gen:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_bram18k:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+WARNING: [IP_Flow 19-519] Language mismatch detected between 'VHDL Synthesis Wrapper' and 'Verilog Synthesis' output products. Please check with the IP provider to see if this is expected.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_8'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_0_9'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_0 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_1_10'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_1 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_2_11'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_2 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_3_12'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_3 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_4_13'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_4 .
+Delivering 'Vivado VHDL Synthesis' files for IP 'Zynq_Design_mog_algorithm_block_1_bram_5_14'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_1_bram_5 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_8'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_outmask .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_9'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_weight .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_10'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_mean0 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_11'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_mean1 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_12'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_mean2 .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_13'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_varsum .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_bram_ctrl_0_14'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram1_frame .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_4' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_4'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon5/xbar .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_5' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_5'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon6/xbar .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_6' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_6'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon7/xbar .
+Delivering 'VHDL Synthesis' files for IP 'Zynq_Design_axi_cdma_1_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_cdma_1 .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_xbar_7' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_xbar_7'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_acpmem_intercon3/xbar .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_s00_data_fifo_199' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_s00_data_fifo_199'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon0/s00_couplers/s00_data_fifo .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_s00_data_fifo_200' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_s00_data_fifo_200'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon2/s00_couplers/s00_data_fifo .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_s01_data_fifo_201' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_s01_data_fifo_201'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon2/s01_couplers/s01_data_fifo .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_s00_data_fifo_202' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_s00_data_fifo_202'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon4/s00_couplers/s00_data_fifo .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_s00_data_fifo_203' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_s00_data_fifo_203'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon7/s00_couplers/s00_data_fifo .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_241' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_241'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1_axi_periph/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_242' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_242'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon0/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_243' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_243'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon1/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_244' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_244'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon4/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_245' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_245'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_acpmem_intercon3/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_us_23' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_us_23'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_acpmem_intercon3/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_us_24' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_us_24'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_acpmem_intercon3/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_246' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_246'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon6/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_us_25' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_us_25'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon6/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1687] The current project language is set to VHDL. However IP 'Zynq_Design_auto_pc_247' does not support 'VHDL Synthesis' output products, delivering 'Verilog Synthesis' output products instead.
+Delivering 'Verilog Synthesis' files for IP 'Zynq_Design_auto_pc_247'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_mem_intercon7/m00_couplers/auto_pc .
+INFO: [BD 41-539] Not generating up to date 'Implementation' target for block design Zynq_Design
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /const_Vcc .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'Zynq_Design_axi_iic_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_iic_1 .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'Zynq_Design_proc_sys_reset_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /const_Gnd .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'Zynq_Design_clk_wiz_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /clk_axivid .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /fmc_imageon_hdmi_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /fmc_imageon_hdmi_in_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_vid_in_axi4s_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_axi4s_vid_out_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_tc_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /pos_reset .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'Zynq_Design_proc_sys_reset_0_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_150M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /bitcrop_24to32 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /bitcrop_32to24 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_yuv422to444_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_yuv444to422_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_ycrcb2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /v_rgb2ycrcb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /mog_algorithm_block_0 .
+INFO: [Common 17-14] Message 'BD 41-1029' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+[Fri Nov 29 16:41:53 2013] Launched synth_1...
+Run output will be captured here: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.runs/synth_1/runme.log
+[Fri Nov 29 16:41:54 2013] Launched impl_1...
+Run output will be captured here: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:03:03 ; elapsed = 00:03:11 . Memory (MB): peak = 5311.555 ; gain = 39.051
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 290 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2013.3
+Loading clock regions from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /mnt/extra/jara/Xilinx/Vivado/2013.3/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Opt 31-138] Pushed 0 inverter(s).
+INFO: [Common 17-78] Attempting to get a license: Internal_bitstream
+WARNING: [Common 17-301] Failed to get a license: Internal_bitstream
+Parsing XDC File [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/.Xil/Vivado-21273-nibbler.utia.cas.cz/dcp/Zynq_Design_wrapper_early.xdc]
+Finished Parsing XDC File [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/.Xil/Vivado-21273-nibbler.utia.cas.cz/dcp/Zynq_Design_wrapper_early.xdc]
+Parsing XDC File [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/.Xil/Vivado-21273-nibbler.utia.cas.cz/dcp/Zynq_Design_wrapper.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_clk_wiz_1_0/Zynq_Design_clk_wiz_1_0.xdc:56]
+INFO: [Timing 38-2] Deriving generated clocks [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_clk_wiz_1_0/Zynq_Design_clk_wiz_1_0.xdc:56]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 6110.262 ; gain = 154.375
+Finished Parsing XDC File [/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/.Xil/Vivado-21273-nibbler.utia.cas.cz/dcp/Zynq_Design_wrapper.xdc]
+Reading XDEF placement.
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 6167.262 ; gain = 57.000
+Restoring placement.
+Restored 13285 out of 13285 XDEF sites from archive | CPU: 14.230000 secs | Memory: 138.946663 MB |
+INFO: [Memdata 28-143] Successfully populated the BRAM INIT strings from the following elf files: 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 140 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 2 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 134 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 4 instances
+
+open_run: Time (s): cpu = 00:01:36 ; elapsed = 00:01:12 . Memory (MB): peak = 6382.309 ; gain = 1044.312
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max, Constraints type: SDC.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+report_timing_summary: Time (s): cpu = 00:01:38 ; elapsed = 00:00:38 . Memory (MB): peak = 6754.047 ; gain = 371.738
+close_project
+close_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 6825.551 ; gain = 0.000
+open_project /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.xpr
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.srcs/constrs_1/new/zc702_pins.xdc: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/constrs_1/designprops.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/constrs_1/usercols.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml'.
+Scanning sources...
+Finished scanning sources
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+Import path for source /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/home/jara/hdl/HLS/fgbg_hls1/vivado_ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/mnt/extra/jara/Xilinx/Vivado/2013.3/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:38 . Memory (MB): peak = 6825.551 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 29 17:35:47 2013...

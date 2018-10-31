@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:26:55 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Tue Feb 11 23:03:44 2014
+# Process ID: 9341
+# Log file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.log
+# Journal file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+WARNING: [Common 17-301] Failed to get a license: Implementation
+WARNING: [Vivado 15-19] WARNING: No 'Implementation' license found. This message may be safely ignored if a Vivado WebPACK or device-locked license, common for board kits, will be used during implementation.
+
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+WARNING: [Common 17-301] Failed to get a license: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /home/jara/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [/home/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/home/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+WARNING: [Vivado 15-19] WARNING: No 'Implementation' license found. This message may be safely ignored if a Vivado WebPACK or device-locked license, common for board kits, will be used during implementation.
+
+open_project /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.xpr
+INFO: [Project 1-313] Project file moved from '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5' since last save.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+CRITICAL WARNING: [Project 1-311] Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log: Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/constrs_1/new/zc702_pins.xdc: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/designprops.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/usercols.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml'.
+Scanning sources...
+Finished scanning sources
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log: Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/home/jara/hdl/fgbg_hls1/vivado_ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/home/jara/Xilinx/Vivado/2013.3/data/ip'.
+WARNING: [BD 41-1303] One or more IPs have been locked in the design 'Zynq_Design.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+open_project: Time (s): cpu = 00:00:56 ; elapsed = 00:00:34 . Memory (MB): peak = 4703.895 ; gain = 209.816
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 11 23:05:43 2014...

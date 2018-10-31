@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# 
+# Start of session at: Fri Mar 31 16:28:08 2017
+# Process ID: 28285
+# Current directory: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.sdk/webtalk/webtalk.log
+# Journal file: /home/mye/Research/Github/trustzoneht/Micro17/project/multiplier/multiplier.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

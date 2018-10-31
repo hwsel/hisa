@@ -1,0 +1,124 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:26:55 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Tue Feb 11 22:54:50 2014
+# Process ID: 8970
+# Log file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.log
+# Journal file: /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+WARNING: [Common 17-301] Failed to get a license: Implementation
+WARNING: [Vivado 15-19] WARNING: No 'Implementation' license found. This message may be safely ignored if a Vivado WebPACK or device-locked license, common for board kits, will be used during implementation.
+
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+WARNING: [Common 17-301] Failed to get a license: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /home/jara/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [/home/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/home/jara/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+WARNING: [Vivado 15-19] WARNING: No 'Implementation' license found. This message may be safely ignored if a Vivado WebPACK or device-locked license, common for board kits, will be used during implementation.
+
+open_project /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.xpr
+INFO: [Project 1-313] Project file moved from '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5' since last save.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+CRITICAL WARNING: [Project 1-311] Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log: Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/constrs_1/new/zc702_pins.xdc: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/constrs_1/new/zc702_pins.xdc'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/designprops.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/designprops.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/constrs_1/usercols.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/constrs_1/usercols.xml'.
+Scanning sources...
+Finished scanning sources
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/ports.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/ports.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.data/sources_1/chipscope.xml: Could not find the file '/home/jara/hdl/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/imageon_zc702_1/imageon_zc702_1.data/sources_1/chipscope.xml'.
+Import path for source /home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log: Could not find the file '/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log', nor could it be found using path '/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_1/zc702_vdmafgbg_1.srcs/sources_1/bd/Zynq_Design/ip/Zynq_Design_mog_algorithm_block_0_0/Zynq_Design_mog_algorithm_block_0_0.upgrade_log'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/home/jara/hdl/fgbg_hls1/vivado_ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/home/jara/Xilinx/Vivado/2013.3/data/ip'.
+WARNING: [BD 41-1303] One or more IPs have been locked in the design 'Zynq_Design.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+open_project: Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 4704.246 ; gain = 226.562
+open_bd_design {/home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd}
+Adding component instance block -- xilinx.com:ip:xlconstant:1.0 - const_Vcc
+Adding component instance block -- xilinx.com:ip:xlconstant:1.0 - const_Gnd
+Adding component instance block -- xilinx.com:ip:v_vid_in_axi4s:3.0 - v_vid_in_axi4s_1
+Adding component instance block -- xilinx.com:ip:axi_iic:2.0 - axi_iic_1
+Adding component instance block -- xilinx.com:ip:processing_system7:5.3 - processing_system7_1
+Adding component instance block -- xilinx.com:ip:v_tc:6.0 - v_tc_2
+Adding component instance block -- xilinx.com:ip:v_axi4s_vid_out:3.0 - v_axi4s_vid_out_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_100M
+Adding component instance block -- xilinx.com:ip:v_tc:6.0 - v_tc_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:5.1 - clk_axivid
+Adding component instance block -- xilinx.com:ip:axi_vdma:6.1 - axi_vdma_0
+Adding component instance block -- xilinx.com:ip:util_vector_logic:1.0 - pos_reset
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_150M
+Adding component instance block -- xilinx.com:user:bitcrop:1.0 - bitcrop_24to32
+Adding component instance block -- xilinx.com:user:bitcrop:1.0 - bitcrop_32to24
+Adding component instance block -- utia.cz:user:fmc_imageon_hdmi_in:3.2 - fmc_imageon_hdmi_in_0
+Adding component instance block -- utia.cz:user:fmc_imageon_hdmi_out:3.2 - fmc_imageon_hdmi_out_0
+Adding component instance block -- utia.cz:user:v_yuv422to444:1.0 - v_yuv422to444_0
+Adding component instance block -- jsykora.info:user:v_yuv444to422:1.0 - v_yuv444to422_0
+Adding component instance block -- xilinx.com:ip:v_ycrcb2rgb:7.1 - v_ycrcb2rgb_0
+Adding component instance block -- xilinx.com:ip:v_rgb2ycrcb:7.1 - v_rgb2ycrcb_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_1
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_2
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_3
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_4
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_0_bram_5
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_outmask
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_weight
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean1
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_mean2
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_varsum
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_frame
+Adding component instance block -- xilinx.com:hls:mog_algorithm_block:1.4.1 - mog_algorithm_block_0
+Adding component instance block -- xilinx.com:ip:axi_cdma:4.1 - axi_cdma_0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_aux
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - blk_mem_gen_0
+Adding component instance block -- xilinx.com:hls:mog_algorithm_block:1.4.1 - mog_algorithm_block_1
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_1
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_2
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_3
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_4
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - mog_algorithm_block_1_bram_5
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_outmask
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_weight
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_mean0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_mean1
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_mean2
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_varsum
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram1_frame
+Adding component instance block -- xilinx.com:ip:axi_cdma:4.1 - axi_cdma_1
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s01_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <Zynq_Design> from BD file </home/jara/hdl/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd>
+open_bd_design: Time (s): cpu = 00:02:00 ; elapsed = 00:01:46 . Memory (MB): peak = 5026.348 ; gain = 282.004
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 11 23:00:36 2014...

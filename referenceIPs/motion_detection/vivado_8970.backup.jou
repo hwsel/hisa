@@ -1,0 +1,350 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:26:55 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Fri Nov 29 15:35:19 2013
+# Process ID: 21273
+# Log file: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/vivado.log
+# Journal file: /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.xpr
+open_bd_design {/home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:mog_algorithm_block:1.4.1 mog_algorithm_block_1
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_1/M_AXI_GP0" }  [get_bd_intf_pins mog_algorithm_block_1/S_AXI_HLS_FGBG_PERIPH_BUS]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_outmask_PORTA]
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_weight_PORTA]
+set_property location {10 5059 2316} [get_bd_cells mog_algorithm_block_1_bram_0]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_0_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_1_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_mean_2_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_models_varsum_PORTA]
+set_property location {10 5066 2555} [get_bd_cells mog_algorithm_block_1_bram]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "New Blk_Mem_Gen" }  [get_bd_intf_pins mog_algorithm_block_1/ptr_frame_PORTA]
+set_property location {9 4624 2598} [get_bd_cells mog_algorithm_block_1]
+set_property location {9 4624 2485} [get_bd_cells mog_algorithm_block_1]
+set_property location {12 5817 2408} [get_bd_cells mog_algorithm_block_1_bram]
+set_property location {12 5825 2498} [get_bd_cells mog_algorithm_block_1_bram_0]
+set_property location {12 5802 2645} [get_bd_cells mog_algorithm_block_1_bram_1]
+set_property location {12 5770 2726} [get_bd_cells mog_algorithm_block_1_bram_2]
+set_property location {12 5776 2822} [get_bd_cells mog_algorithm_block_1_bram_3]
+set_property location {12 5764 2924} [get_bd_cells mog_algorithm_block_1_bram_4]
+set_property location {12 5764 3018} [get_bd_cells mog_algorithm_block_1_bram_5]
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {2048} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5404 2367} [get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram_ctrl_0]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_ctrl_0]
+endgroup
+set_property name axi_bram_outmask1 [ get_bd_cells axi_bram_ctrl_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_outmask1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5364 2591} [get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram_0]
+endgroup
+set_property name axi_bram_weight1 [ get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram_weight1]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_weight1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram_weight1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_0/BRAM_PORTB]
+save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {11 5420 2742} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean0 [ get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_weight [ get_bd_cells axi_bram_weight1]
+set_property name axi_bram1_outmask [ get_bd_cells axi_bram_outmask1]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean0]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean0/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_1/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {12 5588 2891} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean1 [ get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean1]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_2]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean1/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_2/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property location {12 5617 3049} [get_bd_cells axi_bram_ctrl_0]
+set_property name axi_bram1_mean2 [ get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_mean2]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_mean2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_4]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean2/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_4/BRAM_PORTB]
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_3]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_bram1_mean2_bram_porta]
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_mean2/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_3/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property name axi_bram1_varsum [ get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_varsum]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_varsum]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_varsum/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_4/BRAM_PORTB]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0
+endgroup
+set_property name axi_bram1_frame [ get_bd_cells axi_bram_ctrl_0]
+startgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Write_Depth_A {4096} CONFIG.Write_Width_B {64} CONFIG.use_bram_block {Stand_Alone}] [get_bd_cells mog_algorithm_block_1_bram_5]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Write_Depth_A {2048} CONFIG.Write_Width_B {64}] [get_bd_cells mog_algorithm_block_1_bram_5]
+endgroup
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC USER] [get_bd_cells axi_bram1_frame]
+set_property -dict [list CONFIG.DATA_WIDTH {64} CONFIG.SUPPORTS_NARROW_BURST {0} CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram1_frame]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_bram1_frame/BRAM_PORTA] [get_bd_intf_pins mog_algorithm_block_1_bram_5/BRAM_PORTB]
+save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property name axi_mem_intercon5 [ get_bd_cells axi_interconnect_0]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2} CONFIG.NUM_MI {7}] [get_bd_cells axi_mem_intercon5]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M00_AXI] [get_bd_intf_pins axi_bram1_outmask/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M01_AXI] [get_bd_intf_pins axi_bram1_weight/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M02_AXI] [get_bd_intf_pins axi_bram1_mean0/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M03_AXI] [get_bd_intf_pins axi_bram1_mean1/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M04_AXI] [get_bd_intf_pins axi_bram1_mean2/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M05_AXI] [get_bd_intf_pins axi_bram1_varsum/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon5/M06_AXI] [get_bd_intf_pins axi_bram1_frame/S_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_outmask/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_outmask/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_weight/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_weight/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean0/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean1/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_mean2/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_varsum/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_bram1_frame/s_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean0/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean1/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_mean2/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_varsum/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_bram1_frame/s_axi_aresetn] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon5/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/S01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M02_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M03_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M04_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M05_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon5/M06_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/S01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M02_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M03_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M04_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M05_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon5/M06_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property location {6 2960 2221} [get_bd_cells axi_interconnect_0]
+delete_bd_objs [get_bd_intf_nets processing_system7_1_m_axi_gp1]
+connect_bd_intf_net [get_bd_intf_pins processing_system7_1/M_AXI_GP1] [get_bd_intf_pins axi_interconnect_0/S00_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins axi_mem_intercon2/S00_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins axi_mem_intercon5/S00_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+set_property name axi_mem_intercon6 [ get_bd_cells axi_interconnect_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
+endgroup
+set_property name axi_mem_intercon7 [ get_bd_cells axi_interconnect_0]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP3 {1}] [get_bd_cells processing_system7_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins processing_system7_1/S_AXI_HP3] [get_bd_intf_pins axi_mem_intercon7/M00_AXI]
+startgroup
+set_property -dict [list CONFIG.XBAR_DATA_WIDTH.VALUE_SRC USER] [get_bd_cells axi_mem_intercon5]
+set_property -dict [list CONFIG.ENABLE_ADVANCED_OPTIONS {1} CONFIG.XBAR_DATA_WIDTH {64}] [get_bd_cells axi_mem_intercon5]
+endgroup
+startgroup
+set_property -dict [list CONFIG.XBAR_DATA_WIDTH.VALUE_SRC USER] [get_bd_cells axi_mem_intercon7]
+set_property -dict [list CONFIG.STRATEGY {2} CONFIG.ENABLE_ADVANCED_OPTIONS {1} CONFIG.XBAR_DATA_WIDTH {64}] [get_bd_cells axi_mem_intercon7]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_mem_intercon7/M01_AXI] [get_bd_intf_pins axi_mem_intercon5/S01_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon7/ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/S00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_interconnect_aresetn] [get_bd_pins axi_mem_intercon7/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/interconnect_aresetn]
+disconnect_bd_net /proc_sys_reset_interconnect_aresetn [get_bd_pins axi_mem_intercon7/S00_ARESETN]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/S00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/M00_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/M00_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_mem_intercon7/M01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_mem_intercon7/M01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_cdma:4.1 axi_cdma_1
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_M_AXI_DATA_WIDTH {64} CONFIG.C_M_AXI_MAX_BURST_LEN {32} CONFIG.C_INCLUDE_DRE {1}] [get_bd_cells axi_cdma_1]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_1/M_AXI] [get_bd_intf_pins axi_mem_intercon7/S00_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins processing_system7_1/S_AXI_HP3_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2}] [get_bd_cells axi_acpmem_intercon3]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_1/M_AXI_SG] [get_bd_intf_pins axi_acpmem_intercon3/S01_AXI]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_acpmem_intercon3/S01_ACLK] [get_bd_pins processing_system7_1/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets proc_sys_reset_peripheral_aresetn] [get_bd_pins axi_acpmem_intercon3/S01_ARESETN] [get_bd_pins proc_sys_reset_100M/peripheral_aresetn]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_1/M_AXI_GP0" }  [get_bd_intf_pins axi_cdma_1/S_AXI_LITE]
+connect_bd_net -net [get_bd_nets processing_system7_1_fclk_clk0] [get_bd_pins axi_cdma_1/m_axi_aclk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+set_property CONFIG.PCW_NUM_F2P_INTR_INPUTS 4 [get_bd_cells processing_system7_1]
+delete_bd_objs [get_bd_nets axi_cdma_0_cdma_introut]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:1.0 util_vector_logic_0
+endgroup
+delete_bd_objs [get_bd_cells util_vector_logic_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_reduced_logic:1.0 util_reduced_logic_0
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_SIZE {4} CONFIG.C_OPERATION {or}] [get_bd_cells util_reduced_logic_0]
+endgroup
+delete_bd_objs [get_bd_cells util_reduced_logic_0]
+connect_bd_net [get_bd_pins axi_cdma_0/cdma_introut] [get_bd_pins processing_system7_1/IRQ_F2P]
+delete_bd_objs [get_bd_nets axi_cdma_0_cdma_introut]
+save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.0 axi_intc_0
+endgroup
+connect_bd_net [get_bd_pins axi_cdma_1/cdma_introut] [get_bd_pins axi_intc_0/intr]
+set_property -dict [list CONFIG.PortWidth {2}] [get_bd_pins axi_intc_0/intr]
+delete_bd_objs [get_bd_nets axi_cdma_1_cdma_introut]
+delete_bd_objs [get_bd_cells axi_intc_0]
+save_bd_design
+assign_bd_address
+assign_bd_address [get_bd_addr_segs {processing_system7_1/S_AXI_ACP/ACP_IOP }]
+set_property range 4K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80020000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80200000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80202000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x80204000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80206000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80208000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x8020A000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x8020C000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property offset 0x80210000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x8022000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80220000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80230000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80240000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x80250000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80260000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 8K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80100000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_frame_Mem0}]
+set_property offset 0x80110000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean0_Mem0}]
+set_property offset 0x80120000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean1_Mem0}]
+set_property offset 0x80130000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean2_Mem0}]
+set_property offset 0x80140000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_outmask_Mem0}]
+set_property offset 0x80150000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_varsum_Mem0}]
+set_property offset 0x80160000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80000000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+set_property offset 0x80100000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+set_property offset 0x80170000 [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_aux_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {processing_system7_1/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80170000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_aux_Mem0}]
+set_property offset 0x80100000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_frame_Mem0}]
+set_property offset 0x80110000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean0_Mem0}]
+set_property offset 0x80120000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean1_Mem0}]
+set_property offset 0x80130000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean2_Mem0}]
+set_property offset 0x80140000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_outmask_Mem0}]
+set_property offset 0x80150000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_varsum_Mem0}]
+set_property offset 0x80160000 [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_0/Data/SEG_axi_bram_weight_Mem0}]
+set_property offset 0x80200000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_frame_Mem0}]
+set_property offset 0x80210000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property offset 0x80220000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property offset 0x80230000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property offset 0x80240000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_outmask_Mem0}]
+set_property offset 0x80250000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property offset 0x80260000 [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_weight_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean0_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean1_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_mean2_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_varsum_Mem0}]
+set_property range 16K [get_bd_addr_segs {axi_cdma_1/Data/SEG_axi_bram1_weight_Mem0}]
+save_bd_design
+validate_bd_design
+save_bd_design
+set_property is_enabled false [get_files  /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/constrs_fmc2/new/chipscope.xdc]
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+reset_run impl_1 -noclean_dir
+reset_run synth_1
+reset_target all [get_files  /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_5/zc702_vdmafgbg_5.srcs/sources_1/bd/Zynq_Design/Zynq_Design.bd]
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1
+close_project
+open_project /home/jara/hdl/HLS/fgbg_hls1/zc702_vdmafgbg_4/zc702_vdmafgbg_4.xpr
